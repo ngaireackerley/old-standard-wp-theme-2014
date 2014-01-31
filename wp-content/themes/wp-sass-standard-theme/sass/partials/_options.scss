@@ -1,0 +1,147 @@
+/*! Options - including Custom Post Types and Plugin CSS overwrites */
+
+/*! Gravity Forms - Contact Form to fit the 2:1 grid layout */
+#gform_1 {
+	background: lighten($color3, 60%);
+	@include border-radius(10px);
+	border: 1px solid $color2;
+	padding: 20px ($gutter-width*2);
+	margin: 0 0 20px 0;
+	float: $float-direction;
+	width: 100%;
+	.gform_title {
+		margin-top: 0;
+	}
+	ul li {
+		width: 100%;
+		float: $float-direction;
+		label {
+			width: colwidth(4);
+			margin: 10px colwidth(.5) 10px 0;
+			float: $float-direction;
+			font-weight: 300;
+			color: $color2;
+		}
+		.ginput_container {
+			width: colwidth(7.5);
+			margin: 5px 0 0 0;
+			float: $float-direction;
+			textarea, input {
+				width: 100%;
+			}
+		}
+		.ginput_left {
+			width: colwidth(5.75);
+			margin: 5px colwidth(.5) 0 0;
+			float: $float-direction;
+			input {
+				width: 100% !important;
+			}
+		}
+		.ginput_right {
+			width: colwidth(5.75);
+			margin: 5px 0 0 0;
+			float: $float-direction;
+			input {
+				width: 100% !important;
+			}
+		}
+	}
+	.gform_footer  {
+		padding: 0;
+		width: 100%;
+		float: $float-direction;
+		input[type="submit"] {
+			background: $color3;
+			color: $color1;
+			border: none;
+			float: right;
+			padding: 5px ($gutter-width*2);
+			&:hover, &:focus {
+				background: $color4;
+			}
+		}
+	}
+	input, textarea {
+		float: $float-direction;
+		@include border-radius(5px);
+	}
+}
+/*! Soliloquy Slider */
+.soliloquy-container {
+	margin: 0 0 20px 0 !important;
+	img {
+		width: 100%;
+		height: auto;
+	}
+	.soliloquy-caption .soliloquy-caption-inside {
+		background: rgba($color3, 0.5) !important;
+	}
+}
+/*! Staff Plugin single (rest relies on the blog styling) */
+.blogimgsingle {
+	float: left;
+	max-width: colwidth(4);
+	height: auto;
+	float: $float-direction;
+	margin: 0 ($gutter-width*3) $gutter-width-vertical 0;
+	img {
+		width: 100%;
+		height: auto;
+		border: 1px solid lighten($color2, 50%);
+		padding: 5px;
+	}
+	.caption {
+		font-size: 0.8em;
+		color: lighten($color2, 50%);
+		text-align: center;
+		display: block;
+		font-weight: 300;
+	}
+}
+/*! Staff list/single */
+ul.bloglist p.jobdetails, p.jobdetails {
+	font-size: 0.9em;
+	margin-bottom: 20px;
+	display: block;
+	color: lighten($color2, 50%);
+}
+/*! Testimonials Plugin */
+p.testimonialdetails {
+	text-align: right;
+	font-size: 0.8em;
+	color: lighten($color2, 50%);
+}
+/*! sidebar one navigation */
+p.subnavtitle {
+	font-size: 1.2em;	
+	font-family: $fontset1;
+	background: $color3;
+	color: $color1;
+	border-bottom: 1px solid lighten($color2, 50%);
+	padding: 3px 10px;
+	margin-bottom: 0;
+}
+ul.subnavlinks {
+	list-style: outside none;
+	margin: 0 0 30px 0;
+	padding: 0;
+	li {
+		padding: 0;
+		margin: 0;
+		width: 100%;
+		display: block;
+		a {
+			padding: 3px 10px;
+			background: $color1;
+			width: 100%;
+			display: block;
+			border-bottom: 1px solid lighten($color2, 50%);
+			&:hover, &:focus {
+				background: $color3;
+				color: $color1;
+				text-decoration: none;
+			}
+		}
+	}
+}

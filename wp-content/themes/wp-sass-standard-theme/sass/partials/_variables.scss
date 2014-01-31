@@ -1,0 +1,15 @@
+$color1: #fff; // White
+$color2: #000; // Black
+$color3: #585340; // Army Green
+$color4: #8a151b; // Deep Red
+$color5: #b7ae9d; // Beige
+
+$fontset1: 'Italiana', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fontset2: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$gutter-width-vertical: 10px; //used in vertical margins and padding
+$gutter-width: percentage(10/960); // Base 10px into percentage
+$float-direction: left; // Direct elements will float
+$total-columns: 12; //Total columns in site
+$website-padding: 10px; //Padding to the edge of the website in pixels
+$website-width: 960px; //max width

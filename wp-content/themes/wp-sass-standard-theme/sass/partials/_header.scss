@@ -1,0 +1,110 @@
+/*! This is the header styles */
+header {
+	background: $color5;
+	padding: 20px 0 0 0;
+	display: block;
+	.colonethird {
+		padding-right: colwidth(1);
+		a {
+			text-decoration: none;
+			padding: 0;
+			margin: 0;
+			display: block;
+			line-height: 0;
+			img {
+				width: 100%;
+				height: auto;
+				border: none;
+				margin: 0 0 20px 0;
+				padding: 0;
+			}
+		}
+	}
+}
+header .coltwothirds {
+	text-align: right;
+	h2 {
+		font-family: 'Italiana', serif;
+		color: darken($color4, 10%);
+	}
+}
+/*! Main navigation */
+.rowtwo {
+	background: darken($color4, 10%); // spans full width
+	display: block;
+	float: $float-direction;
+	margin: 0 auto;
+	width: 100%;
+	.inner {
+		overflow: visible;
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			li {
+				float: left;
+				position: relative;
+				width: colwidth(2); // change based on how many items
+				margin: 0;
+				height: 100%;
+			}
+			ul {
+				display: none;
+				position: absolute;
+				top: 2.5em;
+				left: 0;
+				float: left;
+				width: 100%;
+				z-index: 99999;
+				li {
+					width: 100%;
+				}
+			}
+		}
+	}
+	a {
+		color: $color1;
+		display: block;
+		line-height: 1.5em;
+		padding: 8px 15px;
+		text-decoration: none;
+		text-align: center;
+	}
+}
+.rowtwo .inner ul ul ul {
+	left: 100%;
+	top: 0;
+}
+.rowtwo .inner ul ul a {
+	background: $color4;
+	line-height: 1.3em;
+	padding: 10px;
+	width: 100%;
+	height: auto;
+	text-decoration: none;
+	border-bottom: 1px dotted $color1;
+}
+.rowtwo .inner li:hover > a,
+.rowtwo .inner ul ul :hover > a {
+	background: $color3;
+	color: #fff;
+	text-decoration: none;
+}
+.rowtwo .inner ul li:hover > ul {
+	display: block;
+}
+.rowtwo .inner ul li.current-menu-item > a, .rowtwo .inner ul li.current-menu-ancestor > a, .rowtwo .inner ul li.current-menu-parent > a {
+	color: $color1;
+	background: $color3;
+}
+* html .rowtwo .inner ul li.current-menu-ancestor a,
+* html .rowtwo .inner ul li.current-menu-item a,
+* html .rowtwo .inner ul li.current-menu-parent a,
+* html .rowtwo .inner ul li a:hover {
+	color: $color1;
+	background: $color3;
+}
+/* mobile menu */
+.mobilemenu {
+	display: none;
+}

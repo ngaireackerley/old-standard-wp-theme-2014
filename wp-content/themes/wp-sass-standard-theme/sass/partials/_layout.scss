@@ -1,0 +1,86 @@
+/*! base layout */ 
+// Text meant only for screen readers 
+.screen-reader-text {
+	position: absolute;
+	left: -9000px;
+}
+#wrapper {
+	width: 100%;
+	@include clearfix;
+}
+.clear {
+	clear:both;
+}
+.inner {
+	@include clearfix;
+	width: colwidth(12);
+	max-width: $website-width;
+	@include centered;
+	padding: 0 10px;
+}
+.contentpage {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.colonewide {
+	width: colwidth(12);
+	float: $float-direction;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+.colonethird {
+	width: (colwidth(4) - ($gutter-width*2));
+	float: $float-direction;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+.coltwothirds {
+	width: (colwidth(8) - ($gutter-width*2));
+	float: $float-direction;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+.colonehalf {
+	width: (colwidth(6) - ($gutter-width*2));
+	float: $float-direction;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+.colonefourth {
+	width: (colwidth(3) - ($gutter-width*2.7));
+	float: $float-direction;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+.rightcol {
+	margin-left: ($gutter-width*2);
+}
+.leftcol {
+	margin-right: ($gutter-width*2);
+}
+.threecols {
+	width: (colwidth(4) - ($gutter-width*2.7));
+	float: $float-direction;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+.colonehalfthreecol {
+	width: (colwidth(6) - ($gutter-width*2.7));
+	float: $float-direction;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}

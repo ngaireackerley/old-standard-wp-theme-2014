@@ -1,0 +1,19 @@
+/* mixins and functions */
+@import "compass/utilities/general/clearfix";
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+} 
+
+@mixin centered {
+	margin: 0 auto;
+}
+
+/*!-- calculate a website single column width based on number of columns it should span from the grid */
+@function colwidth($colno) {
+	$pg: $website-width - ($website-padding*2);
+	$col: $pg / $total-columns;
+	@return percentage(($col*$colno)/$pg);
+}

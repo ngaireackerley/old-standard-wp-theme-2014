@@ -1,0 +1,160 @@
+/*! Media Queries */
+
+/*!-- Tablet portrait / Small landscape */
+@media screen and (max-width: 700px) {
+	.footer-row-one input[type="submit"] {
+		width: auto;
+		display: block;
+		margin: 5px 0;
+		padding: 5px 10px;
+	}
+	.footer-row-one input[type="text"] {
+		width: 100%;
+	}
+}
+/*!-- Small tablet portrait */
+@media screen and (max-width: 620px) {
+	.comments p.form-submit input[type="submit"] {
+			width: auto;
+		}
+	a.homelink {
+		font-size: 0.9em;
+		padding:5px;
+	}
+}
+/*!-- Mobile landscape */
+@media screen and (max-width: 500px) {
+	.colonethird {
+		width: colwidth(12);
+		float: $float-direction;
+		padding: 0 0 20px 0;
+		margin: 0;
+	}
+	.coltwothirds {
+		width: colwidth(12);
+		float: $float-direction;
+		padding: 0 0 20px 0;
+		margin: 0;
+	}
+	.colonehalfthreecol {
+		width: colwidth(12);
+		float: $float-direction;
+		padding: 0 0 20px 0;
+		margin: 0;
+	}
+	.colonehalf {
+		width: colwidth(12);
+		float: $float-direction;
+		padding: 0 0 20px 0;
+		margin: 0;
+	}
+	.threecols {
+		width: colwidth(12);
+		float: $float-direction;
+		padding: 0 0 20px 0;
+		margin: 0;
+	}
+	.colonefourth {
+		width: colwidth(12);
+		float: $float-direction;
+		padding: 0 0 20px 0;
+		margin: 0;
+	}
+	.rightcol {
+		padding-left: 0;
+	}
+	.leftcol {
+		padding-right: 0;
+	}
+	.contentpage .rightcol{
+		margin-top: 40px;
+	}
+	header .colonethird{
+			padding: 0 0 20px 0;
+		a {
+			width: colwidth(8);
+			margin: 0 auto;
+		}
+	}
+	header .coltwothirds {
+		text-align: center;
+	}
+	header .rowtwo .inner .mobilemenu {
+		display: block;
+		ul li {
+			width: 100%;
+			a {
+				margin: 5px 0;
+			}
+			ul, ul ul {
+				//display: block;
+				position: relative;
+				left: 0;
+				width: 100%;
+				top: 0;
+			}
+		}
+	}
+	.mainmenu {
+		display: none;
+	}
+	header
+	.footer-row-two ul {
+		float: left;
+	}
+	footer .footer-row-two {
+		text-align: center;
+		.coltwothirds .socialmedia {
+			float: none;
+			width: 50%;
+			margin: 0 auto;
+		}
+		.socialmedia a:last-child {
+			margin: 0;
+		}
+		ul {
+			clear: both;
+			float: none;
+			width: 70%;
+			margin: 0 auto;
+		}
+	}
+	/* homepage */
+	.homepghighlight {
+		padding: 10px;
+	}
+	/* if comments are added */
+	.comments p label {
+		width: 100%;
+		margin: 0 0 10px 0;
+	}
+	.comments p input, .comments p textarea {
+		width: 100%;
+		margin: 0 0 10px 0;
+	}
+	/* if contact form with gravity forms is added */
+	#gform_1 ul li .ginput_container, #gform_1 ul li label {
+		width: 100%;
+	}
+	/* if solioquy is added - allows for 3 images otherwise caption padding needs adjusting and/or alignment of text */
+	.soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
+		padding: 10px 20% !important;
+		margin: 0 auto !important;
+	}
+}
+/*!-- Mobile portrait */
+@media screen and (max-width: 400px) {
+	footer .footer-row-two .coltwothirds .socialmedia {
+		float: none;
+		width: 65%;
+		margin: 0 auto;
+	}
+	.footer-row-two .socialmedia a:last-child {
+		margin: 0;
+	}
+	/* if using the staff plugin */
+	.blogimgsingle {
+		clear: both;
+		max-width: 100%;
+	}
+}

@@ -1,0 +1,104 @@
+/*! Footer */
+footer {
+	margin-top: 60px;
+}
+footer ul {
+	list-style: disc outside;
+	margin-left: 0;
+}
+.footer-row-one {
+	background: $color5;
+	padding: 20px 0;
+	h3 {
+		font-size: 1.2em;
+	}
+	ul li {
+		color: $color4;
+	}
+	p, a {
+		font-size: 0.9em;
+		color: lighten($color2, 30%);
+	}
+	a:hover, a:focus {
+		color: $color4;
+		text-decoration: underline;
+	}
+	.widget-container {
+		margin-bottom: 20px;
+		float: left;
+		width: 100%;
+	}
+	input[type="submit"] {
+		font-family: $fontset2;
+		@include border-radius(5px);
+		background: $color4;
+		color: $color1;
+		border: none;
+		padding: 6px 0;
+		float: right;
+		width: colwidth(3.5);
+		font-weight: 300;
+		font-size: 0.9em;
+	}
+	input[type="text"] {
+		@include border-radius(5px);
+		padding: 3px 0;
+		width: colwidth(8);
+	}
+}
+.footer-row-two {
+	background: darken($color4, 10%);
+	padding: 20px 0;
+	font-size: 0.8em;
+	ul {
+		list-style: none outside;
+		margin: 0;
+		padding: 0;
+		float: right;
+		li {
+			display: inline;
+			width: auto;
+			margin: 0;
+			padding: 0;
+			.divider {
+				display: inline;
+				padding: 0 2px;
+				color: $color1;
+			}
+		}
+		li:first-child .divider {
+			display: none;
+		}
+	}
+	a {
+		color: $color1;
+	}
+	a:hover, a:focus {
+		color: $color5;
+		text-decoration: underline;
+	}
+	p {
+		margin: 0;
+		padding: 0;
+		color: $color1;
+		line-height: 1.7em;
+	}
+	.socialmedia {
+		float: right;
+		width: 100%;
+		a {
+			margin: 0 0 0 10px;
+			padding: 0;
+			float: right;
+			height: auto;
+			&:hover img, &:focus img {
+				border: 1px solid $color1;
+				@include border-radius(2px);
+			}
+		}
+		img {
+			@include border-radius(2px);
+			border: 1px solid darken($color4, 10%);
+		}
+	}
+}
