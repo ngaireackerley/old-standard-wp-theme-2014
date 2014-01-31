@@ -1,0 +1,1 @@
+[Jan 7, 2014 10:17:25 0-error] [] Fileoptions file `/Users/ngaireackerley/Desktop/Local/sass-base-theme/wp-content/uploads/pb_backupbuddy/fileoptions/23gmc8kjz6.txt` not found and NOT in create mode. Verify file exists & check permissions.
