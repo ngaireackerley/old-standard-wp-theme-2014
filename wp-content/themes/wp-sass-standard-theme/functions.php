@@ -188,53 +188,53 @@ endif;
 function twentyten_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Sidebar Widget Area One' ),
-		'id' => 'sidebar-widget-area-one',
-		'description' => __( 'Add widgets here to appear in your main sidebar.' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Sidebar Widget Area One', 'lbd_standard' ),
+		'id'			 => 'sidebar-widget-area-one',
+		'description'	 => __( 'Add widgets here to appear in your main sidebar.', 'lbd_standard' ),
+		'before_widget'	 => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</li>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 	// Area 2, located in left column of footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Sidebar Widget Area Two' ),
-		'id' => 'sidebar-widget-area-two',
-		'description' => __( 'Add widgets here to appear in your secondary sidebar' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Sidebar Widget Area Two', 'lbd_standard' ),
+		'id'			 => 'sidebar-widget-area-two',
+		'description'	 => __( 'Add widgets here to appear in your secondary sidebar', 'lbd_standard' ),
+		'before_widget'	 => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 	// Area 3, located in left column of footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Footer Column 1 Widget Area' ),
-		'id' => 'footer-one-widget-area',
-		'description' => __( 'Add widgets here to appear in your footer left column, row 1.' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Footer Column 1 Widget Area', 'lbd_standard' ),
+		'id'			 => 'footer-one-widget-area',
+		'description'	 => __( 'Add widgets here to appear in your footer left column, row 1.', 'lbd_standard' ),
+		'before_widget'	 => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 	// Area 4, located in left column of footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Footer Column 2 Widget Area' ),
-		'id' => 'footer-two-widget-area',
-		'description' => __( 'Add widgets here to appear in your footer middle column, row 1.' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Footer Column 2 Widget Area', 'lbd_standard' ),
+		'id'			 => 'footer-two-widget-area',
+		'description'	 => __( 'Add widgets here to appear in your footer middle column, row 1.', 'lbd_standard' ),
+		'before_widget'	 => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 	// Area 5, located in right column of footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Footer Column 3 Widget Area' ),
-		'id' => 'footer-three-widget-area',
-		'description' => __( 'Add widgets here to appear in your footer right column, row 1.' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Footer Column 3 Widget Area', 'lbd_standard' ),
+		'id'			 => 'footer-three-widget-area',
+		'description'	 => __( 'Add widgets here to appear in your footer right column, row 1.', 'lbd_standard' ),
+		'before_widget'	 => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 }
 /** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
@@ -315,7 +315,7 @@ if ( ! function_exists( 'standard_continue_reading_link' ) ) :
  * Returns a "Continue Reading" link for excerpts
  */
 function standard_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Read more about ' . esc_attr(the_title('', ' &raquo;', false))) . '</a>';
+	return ' <a href="'. get_permalink() . '">' . __( 'Read more about ' . esc_attr( the_title( '', ' &raquo;', false ) ), 'lbd_standard' ) . '</a>';
 }
 endif;
 
