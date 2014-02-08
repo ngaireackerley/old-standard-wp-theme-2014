@@ -286,9 +286,10 @@ function login_logo_url( $url ) {
 }
 add_filter( 'login_headerurl', 'login_logo_url' );
 
-function remove_footer_admin () {
-    echo 'Powered by <a href="http://www.wordpress.org">WordPress</a> | Created by <a href="http://lbdesign.tv">LBDesign</a></p>';
-    }
+// Custom admin footer
+function remove_footer_admin( $text ) {
+    return 'Powered by <a href="http://www.wordpress.org">WordPress</a> | Created by <a href="http://lbdesign.tv">LBDesign</a></p>';
+}
 add_filter( 'admin_footer_text', 'remove_footer_admin' );
  
 // Change Howdy
