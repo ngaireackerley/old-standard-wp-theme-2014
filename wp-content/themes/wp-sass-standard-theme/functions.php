@@ -260,12 +260,6 @@ function twentyten_remove_recent_comments_style() {
 }
 add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
 
-/* remove version for security */
-function remove_version() {
-return '';
-}
-add_filter('the_generator', 'remove_version');
-
 /* remove unnecessary stuff from header */
 remove_action( 'wp_head', 'rsd_link' );
 remove_action( 'wp_head', 'wlwmanifest_link' );
