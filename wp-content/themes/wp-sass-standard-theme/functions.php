@@ -463,4 +463,3 @@ function add_alt_tags($content)
     return $content;
 }
 add_filter('the_content', 'add_alt_tags', 99999);
-?>
