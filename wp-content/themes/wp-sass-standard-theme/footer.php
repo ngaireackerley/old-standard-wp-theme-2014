@@ -31,24 +31,26 @@
 				<!-- social media -->
 				<div class="socialmedia">
 					<?php
-					$homepage = 4;
-					if ( get_field( 'youtube_link', $homepage ) ) {
-						echo '<a href="' . esc_url( get_field( 'youtube_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/youtube-20px.png" alt="Twitter" /></a>';
-					}
-					if ( get_field( 'linkedin_page_link', $homepage ) ) {
-						echo '<a href="' . esc_url( get_field( 'linkedin_page_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/linkedin-20px.png" alt="Twitter" /></a>';
-					}
-					if ( get_field( 'google_plus_link', $homepage ) ) {
-						echo '<a href="' . esc_url( get_field( 'google_plus_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/google-plus-20px.png" alt="Twitter" /></a>';
-					}
-					if ( get_field( 'facebook_grouppage_link', $homepage ) ) {
-						echo '<a href="' . esc_url( get_field( 'facebook_grouppage_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/facebook-20px.png" alt="Twitter" /></a>';
-					}
-					if ( get_field( 'twitter_user_page_link', $homepage ) ) {
-						echo '<a href="' . get_field( 'twitter_user_page_link', $homepage ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/twitter-t-20px.png" alt="Twitter" /></a>';
-					}
-					if ( get_field( 'rss_feed_link', $homepage ) ) {
-						echo '<a href="' . esc_url( get_field( 'rss_feed_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/rss-20px.png" alt="Twitter" /></a>';
+					if ( function_exists( 'get_field' ) ) {
+						$homepage = 4;
+						if ( get_field( 'youtube_link', $homepage ) ) {
+							echo '<a href="' . esc_url( get_field( 'youtube_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/youtube-20px.png" alt="Twitter" /></a>';
+						}
+						if ( get_field( 'linkedin_page_link', $homepage ) ) {
+							echo '<a href="' . esc_url( get_field( 'linkedin_page_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/linkedin-20px.png" alt="Twitter" /></a>';
+						}
+						if ( get_field( 'google_plus_link', $homepage ) ) {
+							echo '<a href="' . esc_url( get_field( 'google_plus_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/google-plus-20px.png" alt="Twitter" /></a>';
+						}
+						if ( get_field( 'facebook_grouppage_link', $homepage ) ) {
+							echo '<a href="' . esc_url( get_field( 'facebook_grouppage_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/facebook-20px.png" alt="Twitter" /></a>';
+						}
+						if ( get_field( 'twitter_user_page_link', $homepage ) ) {
+							echo '<a href="' . get_field( 'twitter_user_page_link', $homepage ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/twitter-t-20px.png" alt="Twitter" /></a>';
+						}
+						if ( get_field( 'rss_feed_link', $homepage ) ) {
+							echo '<a href="' . esc_url( get_field( 'rss_feed_link', $homepage ) ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/rss-20px.png" alt="Twitter" /></a>';
+						}
 					}
 					?>
 				</div><!-- / .socialmedia -->
