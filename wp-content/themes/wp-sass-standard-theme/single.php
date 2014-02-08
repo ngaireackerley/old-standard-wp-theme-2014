@@ -18,12 +18,12 @@ get_header(); ?>
 		<?php the_content(); ?>
 		<p class="cattags">
 			<?php if ( count( get_the_category() ) ) : ?>
-				CATEGORY: <?php printf( __( '%2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+				CATEGORY: <?php printf( __( '%2$s', 'lbd_standard' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
 				<?php endif; ?>
 			<br />
 			<?php $tags_list = get_the_tag_list( '', ', ' );
 				if ( $tags_list ): ?>
-				TAG: <?php printf( __( '%2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+				TAG: <?php printf( __( '%2$s', 'lbd_standard' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
 				<?php endif; ?></p>
 				
 		<?php comments_template( '', true ); ?>

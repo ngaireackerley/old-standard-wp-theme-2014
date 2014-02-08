@@ -11,7 +11,7 @@ get_header(); ?>
 		} ?>
 	</div><!-- / .colonewide -->
 	<div class="coltwothirds leftcol">
-	<h1 class="tagsandcats"><?php printf( __( 'News/Blog tagged: %s', 'twentyten' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
+	<h1 class="tagsandcats"><?php printf( __( 'News/Blog tagged: %s', 'lbd_standard' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
 	<ul class="bloglist">
 		<?php while ( have_posts() ) : the_post(); ?>
 		<li>

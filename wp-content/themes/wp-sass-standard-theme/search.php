@@ -11,7 +11,7 @@ get_header(); ?>
 		} ?>
 		
 			<?php if ( have_posts() ) : ?>
-			<h1><?php printf( __( 'Search Results for: %s', 'twentyten' ), get_search_query() ); ?></h1>
+			<h1><?php printf( __( 'Search Results for: %s', 'lbd_standard' ), get_search_query() ); ?></h1>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 			<ul class="search">
@@ -22,8 +22,8 @@ get_header(); ?>
 			</ul>
 			<?php 
 		endwhile; else : ?>
-				<h2><?php _e( 'Nothing Found', 'twentyten' ); ?></h2>
-				<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'twentyten' ); ?></p>
+				<h2><?php _e( 'Nothing Found', 'lbd_standard' ); ?></h2>
+				<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'lbd_standard' ); ?></p>
 				<?php get_search_form(); ?>
 				<p>Alternatively, click a link from our sitemap below</p>
 				<?php wp_nav_menu( array( 'theme_location' => 'sitemap' ) ); ?>
