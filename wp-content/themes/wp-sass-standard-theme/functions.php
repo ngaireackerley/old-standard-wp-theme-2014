@@ -77,6 +77,26 @@ function twentyten_setup() {
 }
 endif;
 
+add_action( 'wp_enqueue_scripts', 'lbd_standard_scripts' );
+/**
+ * Enqueue scipts and styles for the frontend
+ * 
+ * @since 1.0
+ */
+function lbd_standard_scripts() {
+	
+	// Get the theme data, so we can handle stylesheet versioning in one place
+	$theme = wp_get_theme();
+	
+	// Enqueue the Google fonts
+	$font_url = add_query_arg( 'family', urlencode( 'Italiana' ), '//fonts.googleapis.com/css' );
+	wp_enqueue_style( 'lbd_standard_italiana', $font_url, array(), $theme->Version );
+	
+	// Enqueue the main stylesheet
+	wp_enqueue_style( 'lbd_standard_style', get_stylesheet_uri(), array( 'lbd_standard_italiana' ), $theme->Version );
+	
+}
+
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *

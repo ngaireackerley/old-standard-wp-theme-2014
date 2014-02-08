@@ -6,8 +6,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 <!--<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.png" />-->
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link href='http://fonts.googleapis.com/css?family=Italiana' rel='stylesheet' type='text/css'>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form
