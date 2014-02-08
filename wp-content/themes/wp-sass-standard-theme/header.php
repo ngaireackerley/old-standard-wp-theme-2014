@@ -27,7 +27,7 @@
 	<header role="banner">
 			<div class="inner rowone">
 				<div class="skip-link screen-reader-text">
-					<a href="#content" title="<?php esc_attr_e( 'Skip to content'); ?>"><?php _e( 'Skip to content' ); ?></a>
+					<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'lbd_standard' ); ?>"><?php _e( 'Skip to content', 'lbd_standard' ); ?></a>
 				</div><!-- / .skip-link screen-reader-text -->
 				<div class="colonethird leftcol">
 					<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/default-logo.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
