@@ -30,7 +30,7 @@
 					<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'lbd_standard' ); ?>"><?php _e( 'Skip to content', 'lbd_standard' ); ?></a>
 				</div><!-- / .skip-link screen-reader-text -->
 				<div class="colonethird leftcol">
-					<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/default-logo.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+					<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/default-logo.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 				</div><!-- / .colonethird leftcol -->
 				<div class="coltwothirds rightcol">
 					<h2><?php bloginfo( 'description' ); ?></h2>
