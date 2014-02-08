@@ -63,11 +63,11 @@ function twentyten_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'mainnav' => __( 'Main Navigation' ),
-		'footer' => __( 'Footer Navigation' ),
-		'sitemap' => __( 'Sitemap Navigation' ),
-		'mobile' => __( 'Mobile Navigation' ),
-	) );
+			'mainnav'	 => __( 'Main Navigation', 'lbd_standard' ),
+			'footer'	 => __( 'Footer Navigation', 'lbd_standard' ),
+			'sitemap'	 => __( 'Sitemap Navigation', 'lbd_standard' ),
+			'mobile'	 => __( 'Mobile Navigation', 'lbd_standard' ),
+		) );
 
 	// This theme allows users to set a custom background.
 	add_theme_support( 'custom-background', array(
