@@ -280,28 +280,27 @@ h1 a {
 } 
 add_action('login_head', 'my_custom_login_logo');*/
 
-//Custom login link
-function login_logo_url($url) {
+// Custom login link
+function login_logo_url( $url ) {
     return 'http://lbdesign.tv';
 }
 add_filter( 'login_headerurl', 'login_logo_url' );
 
-//Custom admin footer
 function remove_footer_admin () {
     echo 'Powered by <a href="http://www.wordpress.org">WordPress</a> | Created by <a href="http://lbdesign.tv">LBDesign</a></p>';
     }
-add_filter('admin_footer_text', 'remove_footer_admin');
+add_filter( 'admin_footer_text', 'remove_footer_admin' );
  
-//Change Howdy
+// Change Howdy
 function replace_howdy( $wp_admin_bar ) {
-$my_account=$wp_admin_bar->get_node('my-account');
-$newtitle = str_replace( 'Howdy,', 'Logged in as', $my_account->title );
-$wp_admin_bar->add_node( array(
-'id' => 'my-account',
-'title' => $newtitle,
-) );
+	$my_account	 = $wp_admin_bar->get_node( 'my-account' );
+	$newtitle	 = str_replace( 'Howdy,', 'Logged in as', $my_account->title );
+	$wp_admin_bar->add_node( array(
+		'id'	 => 'my-account',
+		'title'	 => $newtitle,
+	) );
 }
-add_filter( 'admin_bar_menu', 'replace_howdy',25 );
+add_filter( 'admin_bar_menu', 'replace_howdy', 25 );
 
 /**
  * Sets the post excerpt length to 40 characters.
@@ -346,21 +345,17 @@ function standard_custom_excerpt_more( $output ) {
 add_filter( 'get_the_excerpt', 'standard_custom_excerpt_more' );
 
 /* add alt tags to images */
-function add_alt_tags($content)
-{
-    global $post;
-    preg_match_all('/<img (.*?)\/>/', $content, $images);
-    if(!is_null($images))
-    {
-            foreach($images[1] as $index => $value)
-            {
-                    if(!preg_match('/alt=/', $value))
-                    {
-                            $new_img = str_replace('<img', '<img alt="'.$post->post_title.'"', $images[0][$index]);
-                            $content = str_replace($images[0][$index], $new_img, $content);
-                    }
-            }
-    }
-    return $content;
+function add_alt_tags( $content ) {
+	global $post;
+	preg_match_all( '/<img (.*?)\/>/', $content, $images );
+	if ( ! is_null( $images ) ) {
+		foreach ( $images[1] as $index => $value ) {
+			if ( ! preg_match( '/alt=/', $value ) ) {
+				$new_img = str_replace( '<img', '<img alt="' . $post->post_title . '"', $images[0][ $index ] );
+				$content = str_replace( $images[0][ $index ], $new_img, $content );
+			}
+		}
+	}
+	return $content;
 }
-add_filter('the_content', 'add_alt_tags', 99999);
+add_filter( 'the_content', 'add_alt_tags', 99999 );
