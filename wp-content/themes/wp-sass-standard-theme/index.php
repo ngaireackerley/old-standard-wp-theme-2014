@@ -22,6 +22,7 @@ get_header(); ?>
 		<?php 
 		// the query
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		$args = array ( 'post_type' => 'post', 'orderby' => 'date', 'order' => 'DSC', 'paged' => $paged , 'posts_per_page' => 10 );
 		$the_query = new WP_Query( $args );
 		if ( $the_query->have_posts() ) : ?>
 			<ul class="bloglist">
