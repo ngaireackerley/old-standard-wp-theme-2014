@@ -3,8 +3,8 @@
 get_header(); ?>
 <div class="inner contentpage">
 	<div class="colonewide">
-		<?php if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+		<?php if ( function_exists( 'yoast_breadcrumb' ) ) {
+			yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 		} ?>
 	</div><!-- / .colonewide -->
 	<div class="coltwothirds leftcol">

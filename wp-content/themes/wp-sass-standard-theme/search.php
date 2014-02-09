@@ -6,8 +6,8 @@
 get_header(); ?>
 <div class="inner contentpage">
 	<div class="colonewide">
-		<?php if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+		<?php if ( function_exists( 'yoast_breadcrumb' ) ) {
+			yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 		} ?>
 		
 			<?php if ( have_posts() ) : ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 			<ul class="search">
 				<li>
-					<h2><a href="<?php esc_url(the_permalink()); ?>"><?php esc_attr(the_title()); ?></a></h2>
+					<h2><a href="<?php esc_url( the_permalink() ); ?>"><?php esc_attr( the_title() ); ?></a></h2>
 					<?php the_excerpt(); ?>
 				</li>
 			</ul>

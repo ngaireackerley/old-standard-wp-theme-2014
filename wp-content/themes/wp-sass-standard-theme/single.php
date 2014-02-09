@@ -5,14 +5,14 @@
 get_header(); ?>	
 <div class="inner contentpage">
 	<div class="colonewide">
-		<?php if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+		<?php if ( function_exists( 'yoast_breadcrumb' ) ) {
+			yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
 		} ?>
 	</div><!-- / .colonewide -->
 	<div class="coltwothirds leftcol">
-		<h1><?php esc_attr(the_title()); ?></h1>
-		<p class="date">POSTED: <?php echo get_the_date('j-M-Y'); ?></p>
-		<?php if(has_post_thumbnail()) {
+		<h1><?php esc_attr( the_title() ); ?></h1>
+		<p class="date">POSTED: <?php echo get_the_date( 'j-M-Y' ); ?></p>
+		<?php if ( has_post_thumbnail() ) {
 			the_post_thumbnail();
 		} ?>
 		<?php the_content(); ?>
@@ -28,7 +28,7 @@ get_header(); ?>
 				
 		<?php comments_template( '', true ); ?>
 		<!-- edit ID based on the page of the blog/news -->
-		<a class="backlink" href="<?Php echo get_permalink(1066); ?>">&laquo; Back to Blog</a>
+		<a class="backlink" href="<?Php echo get_permalink( 1066 ); ?>">&laquo; Back to Blog</a>
 	</div><!-- / .coltwothirds leftcol -->
 	<div class="colonethird rightcol">
 		<?php get_sidebar(); ?>
