@@ -46,7 +46,7 @@ get_header(); ?>
 		<?php endif; ?>
 	</div><!-- / .coltwothirds leftcol -->
 	<div class="colonethird rightcol">
-		<?php include('sidebar-secondary.php'); ?>
+		<?php get_sidebar( 'secondary' ); ?>
 	</div><!-- /.colonethird rightcol -->
 </div><!-- / .inner -->
 <?php get_footer(); ?>
