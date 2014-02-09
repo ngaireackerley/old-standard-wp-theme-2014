@@ -142,7 +142,7 @@ function twentyten_remove_gallery_css( $css ) {
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
 	add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
 
-if ( ! function_exists( 'twentyten_comment' ) ) :
+if ( ! function_exists( 'lbd_standard_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
@@ -153,7 +153,7 @@ if ( ! function_exists( 'twentyten_comment' ) ) :
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_comment( $comment, $args, $depth ) {
+function lbd_standard_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case '' :
