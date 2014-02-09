@@ -6,7 +6,7 @@
  * are used in the theme as custom template tags. Others are attached to action and
  * filter hooks in WordPress to change core functionality.
  *
- * The first function, twentyten_setup(), sets up the theme by registering support
+ * The first function, lbd_standard_setup(), sets up the theme by registering support
  * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
@@ -23,10 +23,10 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640;
 
-/** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'twentyten_setup' );
+/** Tell WordPress to run lbd_standard_setup() when the 'after_setup_theme' hook is run. */
+add_action( 'after_setup_theme', 'lbd_standard_setup' );
 
-if ( ! function_exists( 'twentyten_setup' ) ):
+if ( ! function_exists( 'lbd_standard_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -34,7 +34,7 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * To override twentyten_setup() in a child theme, add your own twentyten_setup to your child theme's
+ * To override lbd_standard_setup() in a child theme, add your own lbd_standard_setup to your child theme's
  * functions.php file.
  *
  * @uses add_theme_support() To add support for post thumbnails, custom headers and backgrounds, and automatic feed links.
@@ -46,7 +46,7 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_setup() {
+function lbd_standard_setup() {
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -105,12 +105,12 @@ function lbd_standard_scripts() {
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_page_menu_args( $args ) {
+function lbd_standard_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'twentyten_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'lbd_standard_page_menu_args' );
 
 
 
@@ -135,19 +135,19 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  *
  * @return string The gallery style filter, with the styles themselves removed.
  */
-function twentyten_remove_gallery_css( $css ) {
+function lbd_standard_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
 // Backwards compatibility with WordPress 3.0.
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
-	add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
+	add_filter( 'gallery_style', 'lbd_standard_remove_gallery_css' );
 
 if ( ! function_exists( 'lbd_standard_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyten_comment(), and that function will be used instead.
+ * simply create your own lbd_standard_comment(), and that function will be used instead.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
@@ -199,13 +199,13 @@ endif;
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
  *
- * To override twentyten_widgets_init() in a child theme, remove the action hook and add your own
+ * To override lbd_standard_widgets_init() in a child theme, remove the action hook and add your own
  * function tied to the init hook.
  *
  * @since Twenty Ten 1.0
  * @uses register_sidebar
  */
-function twentyten_widgets_init() {
+function lbd_standard_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
 		'name'			 => __( 'Sidebar Widget Area One', 'lbd_standard' ),
@@ -257,8 +257,8 @@ function twentyten_widgets_init() {
 		'after_title'	 => '</h3>',
 	) );
 }
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
-add_action( 'widgets_init', 'twentyten_widgets_init' );
+/** Register sidebars by running lbd_standard_widgets_init() on the widgets_init hook. */
+add_action( 'widgets_init', 'lbd_standard_widgets_init' );
 
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
@@ -272,10 +272,10 @@ add_action( 'widgets_init', 'twentyten_widgets_init' );
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_remove_recent_comments_style() {
+function lbd_standard_remove_recent_comments_style() {
 	add_filter( 'show_recent_comments_widget_style', '__return_false' );
 }
-add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
+add_action( 'widgets_init', 'lbd_standard_remove_recent_comments_style' );
 
 /* remove unnecessary stuff from header */
 remove_action( 'wp_head', 'rsd_link' );
@@ -298,19 +298,19 @@ h1 a {
 add_action('login_head', 'my_custom_login_logo');*/
 
 // Custom login link
-function login_logo_url( $url ) {
+function lbd_standard_login_logo_url( $url ) {
     return 'http://lbdesign.tv';
 }
-add_filter( 'login_headerurl', 'login_logo_url' );
+add_filter( 'login_headerurl', 'lbd_standard_login_logo_url' );
 
 // Custom admin footer
-function remove_footer_admin( $text ) {
+function lbd_standard_remove_footer_admin( $text ) {
     return 'Powered by <a href="http://www.wordpress.org">WordPress</a> | Created by <a href="http://lbdesign.tv">LBDesign</a></p>';
 }
-add_filter( 'admin_footer_text', 'remove_footer_admin' );
+add_filter( 'admin_footer_text', 'lbd_standard_remove_footer_admin' );
  
 // Change Howdy
-function replace_howdy( $wp_admin_bar ) {
+function lbd_standard_replace_howdy( $wp_admin_bar ) {
 	$my_account	 = $wp_admin_bar->get_node( 'my-account' );
 	$newtitle	 = str_replace( 'Howdy,', 'Logged in as', $my_account->title );
 	$wp_admin_bar->add_node( array(
@@ -318,52 +318,52 @@ function replace_howdy( $wp_admin_bar ) {
 		'title'	 => $newtitle,
 	) );
 }
-add_filter( 'admin_bar_menu', 'replace_howdy', 25 );
+add_filter( 'admin_bar_menu', 'lbd_standard_replace_howdy', 25 );
 
 /**
  * Sets the post excerpt length to 40 characters.
  * To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  */
-function standard_excerpt_length( $length ) {
+function lbd_standard_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'standard_excerpt_length' );
+add_filter( 'excerpt_length', 'lbd_standard_excerpt_length' );
 
-if ( ! function_exists( 'standard_continue_reading_link' ) ) :
+if ( ! function_exists( 'lbd_standard_continue_reading_link' ) ) :
 /**
  * Returns a "Continue Reading" link for excerpts
  */
-function standard_continue_reading_link() {
+function lbd_standard_continue_reading_link() {
 	return ' <a href="'. get_permalink() . '">' . __( 'Read more about ' . esc_attr( the_title( '', ' &raquo;', false ) ), 'lbd_standard' ) . '</a>';
 }
 endif;
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and standard_continue_reading_link().
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and lbd_standard_continue_reading_link().
  * To override this in a child theme, remove the filter and add your own
  * function tied to the excerpt_more filter hook.
  */
-function standard_auto_excerpt_more( $more ) {
-	return ' &hellip;' . standard_continue_reading_link();
+function lbd_standard_auto_excerpt_more( $more ) {
+	return ' &hellip;' . lbd_standard_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'standard_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'lbd_standard_auto_excerpt_more' );
 
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
  * To override this link in a child theme, remove the filter and add your own
  * function tied to the get_the_excerpt filter hook.
  */
-function standard_custom_excerpt_more( $output ) {
+function lbd_standard_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= ' &hellip;' . standard_continue_reading_link();
+		$output .= ' &hellip;' . lbd_standard_continue_reading_link();
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'standard_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'lbd_standard_custom_excerpt_more' );
 
 /* add alt tags to images */
-function add_alt_tags( $content ) {
+function lbd_standard_add_alt_tags( $content ) {
 	global $post;
 	preg_match_all( '/<img (.*?)\/>/', $content, $images );
 	if ( ! is_null( $images ) ) {
@@ -376,4 +376,4 @@ function add_alt_tags( $content ) {
 	}
 	return $content;
 }
-add_filter( 'the_content', 'add_alt_tags', 99999 );
+add_filter( 'the_content', 'lbd_standard_add_alt_tags', 99999 );
