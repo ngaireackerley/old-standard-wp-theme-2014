@@ -21,7 +21,7 @@ get_header(); ?>
 		<h1><?php esc_attr( the_title() ); ?></h1>
 		<?php 
 		// the query
-		$args = array ( 'post_type' => 'post', 'orderby' => 'date', 'order' => 'DSC', 'paged' => $paged , 'posts_per_page' => '10' );
+		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 		$the_query = new WP_Query( $args );
 		if ( $the_query->have_posts() ) : ?>
 			<ul class="bloglist">
