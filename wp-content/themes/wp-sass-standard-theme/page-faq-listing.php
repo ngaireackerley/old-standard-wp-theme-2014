@@ -3,19 +3,19 @@
 get_header(); ?>
 <div class="inner contentpage">
 	<div class="colonewide">
-		<?php if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb('<p id="breadcrumbs">','</p>');
+		<?php if ( function_exists( 'yoast_breadcrumb' ) ) {
+			yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
 		} ?>
 	</div><!-- / .colonewide -->
 	<div class="coltwothirds leftcol">
 		<?php if ( post_type_exists( 'faq' ) ) { ?>
 			<h1><?php the_title(); ?></h1>	
-			<?php if(has_post_thumbnail()) {
+			<?php if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			} ?>
 			<?php 
 			// the query
-			$faqargs = array ( 'post_type' => 'faq', 'order' => 'ASC', 'posts_per_page' => '-1');
+			$faqargs = array ( 'post_type' => 'faq', 'order' => 'ASC', 'posts_per_page' => -1 );
 			$faq_query = new WP_Query( $faqargs );
 			if ( $faq_query->have_posts() ) : ?>
 			<ul class="bloglist">
@@ -32,7 +32,7 @@ get_header(); ?>
 		<?php } ?>
 	</div><!-- / .coltwothirds leftcol -->
 	<div class="colonethird rightcol">
-		<?php include('sidebar-secondary.php'); ?>
+		<?php get_sidebar( 'secondary' ); ?>
 	</div><!-- /.colonethird rightcol -->
 </div><!-- / .inner -->
 <?php get_footer(); ?>

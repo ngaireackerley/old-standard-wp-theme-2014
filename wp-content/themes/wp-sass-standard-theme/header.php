@@ -6,8 +6,6 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 <!--<link rel="icon" href="<?php bloginfo('stylesheet_directory'); ?>/images/favicon.png" />-->
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link href='http://fonts.googleapis.com/css?family=Italiana' rel='stylesheet' type='text/css'>
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php
 	/* We add some JavaScript to pages with the comment form
@@ -29,10 +27,10 @@
 	<header role="banner">
 			<div class="inner rowone">
 				<div class="skip-link screen-reader-text">
-					<a href="#content" title="<?php esc_attr_e( 'Skip to content'); ?>"><?php _e( 'Skip to content' ); ?></a>
+					<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'lbd_standard' ); ?>"><?php _e( 'Skip to content', 'lbd_standard' ); ?></a>
 				</div><!-- / .skip-link screen-reader-text -->
 				<div class="colonethird leftcol">
-					<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/images/default-logo.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+					<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/default-logo.jpg" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 				</div><!-- / .colonethird leftcol -->
 				<div class="coltwothirds rightcol">
 					<h2><?php bloginfo( 'description' ); ?></h2>

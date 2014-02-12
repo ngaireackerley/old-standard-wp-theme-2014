@@ -6,7 +6,7 @@
  * are used in the theme as custom template tags. Others are attached to action and
  * filter hooks in WordPress to change core functionality.
  *
- * The first function, twentyten_setup(), sets up the theme by registering support
+ * The first function, lbd_standard_setup(), sets up the theme by registering support
  * for various features in WordPress, such as post thumbnails, navigation menus, and the like.
  *
  * Functions that are not pluggable (not wrapped in function_exists()) are instead attached
@@ -23,10 +23,10 @@
 if ( ! isset( $content_width ) )
 	$content_width = 640;
 
-/** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'twentyten_setup' );
+/** Tell WordPress to run lbd_standard_setup() when the 'after_setup_theme' hook is run. */
+add_action( 'after_setup_theme', 'lbd_standard_setup' );
 
-if ( ! function_exists( 'twentyten_setup' ) ):
+if ( ! function_exists( 'lbd_standard_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -34,7 +34,7 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * To override twentyten_setup() in a child theme, add your own twentyten_setup to your child theme's
+ * To override lbd_standard_setup() in a child theme, add your own lbd_standard_setup to your child theme's
  * functions.php file.
  *
  * @uses add_theme_support() To add support for post thumbnails, custom headers and backgrounds, and automatic feed links.
@@ -46,13 +46,10 @@ if ( ! function_exists( 'twentyten_setup' ) ):
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_setup() {
+function lbd_standard_setup() {
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
-
-	// Post Format support. You can also use the legacy "gallery" or "asides" (note the plural) categories.
-	//add_theme_support( 'post-formats', array( 'aside', 'gallery' ) );
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
@@ -62,15 +59,15 @@ function twentyten_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'twentyten', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'lbd_standard', get_template_directory() . '/languages' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'mainnav' => __( 'Main Navigation' ),
-		'footer' => __( 'Footer Navigation' ),
-		'sitemap' => __( 'Sitemap Navigation' ),
-		'mobile' => __( 'Mobile Navigation' ),
-	) );
+			'mainnav'	 => __( 'Main Navigation', 'lbd_standard' ),
+			'footer'	 => __( 'Footer Navigation', 'lbd_standard' ),
+			'sitemap'	 => __( 'Sitemap Navigation', 'lbd_standard' ),
+			'mobile'	 => __( 'Mobile Navigation', 'lbd_standard' ),
+		) );
 
 	// This theme allows users to set a custom background.
 	add_theme_support( 'custom-background', array(
@@ -80,30 +77,25 @@ function twentyten_setup() {
 }
 endif;
 
-if ( ! function_exists( 'twentyten_admin_header_style' ) ) :
+add_action( 'wp_enqueue_scripts', 'lbd_standard_scripts' );
 /**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * Referenced via add_custom_image_header() in twentyten_setup().
- *
- * @since Twenty Ten 1.0
+ * Enqueue scipts and styles for the frontend
+ * 
+ * @since 1.0
  */
-function twentyten_admin_header_style() {
-?>
-<style type="text/css" id="twentyten-admin-header-css">
-/* Shows the same border as on front end */
-#headimg {
-	border-bottom: 1px solid #000;
-	border-top: 4px solid #000;
+function lbd_standard_scripts() {
+	
+	// Get the theme data, so we can handle stylesheet versioning in one place
+	$theme = wp_get_theme();
+	
+	// Enqueue the Google fonts
+	$font_url = add_query_arg( 'family', urlencode( 'Italiana' ), '//fonts.googleapis.com/css' );
+	wp_enqueue_style( 'lbd_standard_italiana', $font_url, array(), $theme->Version );
+	
+	// Enqueue the main stylesheet
+	wp_enqueue_style( 'lbd_standard_style', get_stylesheet_uri(), array( 'lbd_standard_italiana' ), $theme->Version );
+	
 }
-/* If header-text was supported, you would style the text with these selectors:
-	#headimg #name { }
-	#headimg #desc { }
-*/
-</style>
-<?php
-}
-endif;
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -113,12 +105,12 @@ endif;
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_page_menu_args( $args ) {
+function lbd_standard_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'twentyten_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'lbd_standard_page_menu_args' );
 
 
 
@@ -143,25 +135,25 @@ add_filter( 'use_default_gallery_style', '__return_false' );
  *
  * @return string The gallery style filter, with the styles themselves removed.
  */
-function twentyten_remove_gallery_css( $css ) {
+function lbd_standard_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
 // Backwards compatibility with WordPress 3.0.
 if ( version_compare( $GLOBALS['wp_version'], '3.1', '<' ) )
-	add_filter( 'gallery_style', 'twentyten_remove_gallery_css' );
+	add_filter( 'gallery_style', 'lbd_standard_remove_gallery_css' );
 
-if ( ! function_exists( 'twentyten_comment' ) ) :
+if ( ! function_exists( 'lbd_standard_comment' ) ) :
 /**
  * Template for comments and pingbacks.
  *
  * To override this walker in a child theme without modifying the comments template
- * simply create your own twentyten_comment(), and that function will be used instead.
+ * simply create your own lbd_standard_comment(), and that function will be used instead.
  *
  * Used as a callback by wp_list_comments() for displaying the comments.
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_comment( $comment, $args, $depth ) {
+function lbd_standard_comment( $comment, $args, $depth ) {
 	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case '' :
@@ -170,17 +162,17 @@ function twentyten_comment( $comment, $args, $depth ) {
 		<div id="comment-<?php comment_ID(); ?>">
 			<div class="comment-author vcard">
 				<?php echo get_avatar( $comment, 40 ); ?>
-				<?php printf( __( '%s <span class="says">says:</span>', 'twentyten' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+				<?php printf( __( '%s <span class="says">says:</span>', 'lbd_standard' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 			</div><!-- .comment-author .vcard -->
 			<?php if ( $comment->comment_approved == '0' ) : ?>
-				<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
+				<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'lbd_standard' ); ?></em>
 				<br />
 			<?php endif; ?>
 
 			<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 				<?php
 					/* translators: 1: date, 2: time */
-					printf( __( '%1$s at %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );
+					printf( __( '%1$s at %2$s', 'lbd_standard' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'lbd_standard' ), ' ' );
 				?>
 			</div><!-- .comment-meta .commentmetadata -->
 
@@ -197,7 +189,7 @@ function twentyten_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'lbd_standard' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'lbd_standard' ), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;
@@ -207,66 +199,66 @@ endif;
 /**
  * Register widgetized areas, including two sidebars and four widget-ready columns in the footer.
  *
- * To override twentyten_widgets_init() in a child theme, remove the action hook and add your own
+ * To override lbd_standard_widgets_init() in a child theme, remove the action hook and add your own
  * function tied to the init hook.
  *
  * @since Twenty Ten 1.0
  * @uses register_sidebar
  */
-function twentyten_widgets_init() {
+function lbd_standard_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Sidebar Widget Area One' ),
-		'id' => 'sidebar-widget-area-one',
-		'description' => __( 'Add widgets here to appear in your main sidebar.' ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Sidebar Widget Area One', 'lbd_standard' ),
+		'id'			 => 'sidebar-widget-area-one',
+		'description'	 => __( 'Add widgets here to appear in your main sidebar.', 'lbd_standard' ),
+		'before_widget'	 => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</li>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 	// Area 2, located in left column of footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Sidebar Widget Area Two' ),
-		'id' => 'sidebar-widget-area-two',
-		'description' => __( 'Add widgets here to appear in your secondary sidebar' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Sidebar Widget Area Two', 'lbd_standard' ),
+		'id'			 => 'sidebar-widget-area-two',
+		'description'	 => __( 'Add widgets here to appear in your secondary sidebar', 'lbd_standard' ),
+		'before_widget'	 => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 	// Area 3, located in left column of footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Footer Column 1 Widget Area' ),
-		'id' => 'footer-one-widget-area',
-		'description' => __( 'Add widgets here to appear in your footer left column, row 1.' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Footer Column 1 Widget Area', 'lbd_standard' ),
+		'id'			 => 'footer-one-widget-area',
+		'description'	 => __( 'Add widgets here to appear in your footer left column, row 1.', 'lbd_standard' ),
+		'before_widget'	 => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 	// Area 4, located in left column of footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Footer Column 2 Widget Area' ),
-		'id' => 'footer-two-widget-area',
-		'description' => __( 'Add widgets here to appear in your footer middle column, row 1.' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Footer Column 2 Widget Area', 'lbd_standard' ),
+		'id'			 => 'footer-two-widget-area',
+		'description'	 => __( 'Add widgets here to appear in your footer middle column, row 1.', 'lbd_standard' ),
+		'before_widget'	 => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 	// Area 5, located in right column of footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Footer Column 3 Widget Area' ),
-		'id' => 'footer-three-widget-area',
-		'description' => __( 'Add widgets here to appear in your footer right column, row 1.' ),
-		'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'name'			 => __( 'Footer Column 3 Widget Area', 'lbd_standard' ),
+		'id'			 => 'footer-three-widget-area',
+		'description'	 => __( 'Add widgets here to appear in your footer right column, row 1.', 'lbd_standard' ),
+		'before_widget'	 => '<div id="%1$s" class="widget-container %2$s">',
+		'after_widget'	 => '</div>',
+		'before_title'	 => '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
 	) );
 }
-/** Register sidebars by running twentyten_widgets_init() on the widgets_init hook. */
-add_action( 'widgets_init', 'twentyten_widgets_init' );
+/** Register sidebars by running lbd_standard_widgets_init() on the widgets_init hook. */
+add_action( 'widgets_init', 'lbd_standard_widgets_init' );
 
 /**
  * Removes the default styles that are packaged with the Recent Comments widget.
@@ -280,84 +272,10 @@ add_action( 'widgets_init', 'twentyten_widgets_init' );
  *
  * @since Twenty Ten 1.0
  */
-function twentyten_remove_recent_comments_style() {
+function lbd_standard_remove_recent_comments_style() {
 	add_filter( 'show_recent_comments_widget_style', '__return_false' );
 }
-add_action( 'widgets_init', 'twentyten_remove_recent_comments_style' );
-
-
-if ( ! function_exists( 'twentyten_posted_in' ) ) :
-/**
- * Prints HTML with meta information for the current post (category, tags and permalink).
- *
- * @since Twenty Ten 1.0
- */
-function twentyten_posted_in() {
-	// Retrieves tag list of current post, separated by commas.
-	$tag_list = get_the_tag_list( '', ', ' );
-	if ( $tag_list ) {
-		$posted_in = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyten' );
-	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-		$posted_in = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyten' );
-	} else {
-		$posted_in = __( 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.', 'twentyten' );
-	}
-	// Prints the string, replacing the placeholders.
-	printf(
-		$posted_in,
-		get_the_category_list( ', ' ),
-		$tag_list,
-		get_permalink(),
-		the_title_attribute( 'echo=0' )
-	);
-}
-endif;
-
-/**
- * Retrieves the IDs for images in a gallery.
- *
- * @uses get_post_galleries() first, if available. Falls back to shortcode parsing,
- * then as last option uses a get_posts() call.
- *
- * @since Twenty Ten 1.6.
- *
- * @return array List of image IDs from the post gallery.
- */
-function twentyten_get_gallery_images() {
-	$images = array();
-
-	if ( function_exists( 'get_post_galleries' ) ) {
-		$galleries = get_post_galleries( get_the_ID(), false );
-		if ( isset( $galleries[0]['ids'] ) )
-		 	$images = explode( ',', $galleries[0]['ids'] );
-	} else {
-		$pattern = get_shortcode_regex();
-		preg_match( "/$pattern/s", get_the_content(), $match );
-		$atts = shortcode_parse_atts( $match[3] );
-		if ( isset( $atts['ids'] ) )
-			$images = explode( ',', $atts['ids'] );
-	}
-
-	if ( ! $images ) {
-		$images = get_posts( array(
-			'fields'         => 'ids',
-			'numberposts'    => 999,
-			'order'          => 'ASC',
-			'orderby'        => 'menu_order',
-			'post_mime_type' => 'image',
-			'post_parent'    => get_the_ID(),
-			'post_type'      => 'attachment',
-		) );
-	}
-
-	return $images;
-}
-
-/* remove version for security */
-function remove_version() {
-return '';
-}
-add_filter('the_generator', 'remove_version');
+add_action( 'widgets_init', 'lbd_standard_remove_recent_comments_style' );
 
 /* remove unnecessary stuff from header */
 remove_action( 'wp_head', 'rsd_link' );
@@ -379,88 +297,83 @@ h1 a {
 } 
 add_action('login_head', 'my_custom_login_logo');*/
 
-//Custom login link
-function login_logo_url($url) {
+// Custom login link
+function lbd_standard_login_logo_url( $url ) {
     return 'http://lbdesign.tv';
 }
-add_filter( 'login_headerurl', 'login_logo_url' );
+add_filter( 'login_headerurl', 'lbd_standard_login_logo_url' );
 
-//Custom admin footer
-function remove_footer_admin () {
-    echo 'Powered by <a href="http://www.wordpress.org">WordPress</a> | Created by <a href="http://lbdesign.tv">LBDesign</a></p>';
-    }
-add_filter('admin_footer_text', 'remove_footer_admin');
- 
-//Change Howdy
-function replace_howdy( $wp_admin_bar ) {
-$my_account=$wp_admin_bar->get_node('my-account');
-$newtitle = str_replace( 'Howdy,', 'Logged in as', $my_account->title );
-$wp_admin_bar->add_node( array(
-'id' => 'my-account',
-'title' => $newtitle,
-) );
+// Custom admin footer
+function lbd_standard_remove_footer_admin( $text ) {
+    return 'Powered by <a href="http://www.wordpress.org">WordPress</a> | Created by <a href="http://lbdesign.tv">LBDesign</a></p>';
 }
-add_filter( 'admin_bar_menu', 'replace_howdy',25 );
+add_filter( 'admin_footer_text', 'lbd_standard_remove_footer_admin' );
+ 
+// Change Howdy
+function lbd_standard_replace_howdy( $wp_admin_bar ) {
+	$my_account	 = $wp_admin_bar->get_node( 'my-account' );
+	$newtitle	 = str_replace( 'Howdy,', 'Logged in as', $my_account->title );
+	$wp_admin_bar->add_node( array(
+		'id'	 => 'my-account',
+		'title'	 => $newtitle,
+	) );
+}
+add_filter( 'admin_bar_menu', 'lbd_standard_replace_howdy', 25 );
 
 /**
  * Sets the post excerpt length to 40 characters.
  * To override this length in a child theme, remove the filter and add your own
  * function tied to the excerpt_length filter hook.
  */
-function standard_excerpt_length( $length ) {
+function lbd_standard_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'standard_excerpt_length' );
+add_filter( 'excerpt_length', 'lbd_standard_excerpt_length' );
 
-if ( ! function_exists( 'standard_continue_reading_link' ) ) :
+if ( ! function_exists( 'lbd_standard_continue_reading_link' ) ) :
 /**
  * Returns a "Continue Reading" link for excerpts
  */
-function standard_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Read more about ' . esc_attr(the_title('', ' &raquo;', false))) . '</a>';
+function lbd_standard_continue_reading_link() {
+	return ' <a href="'. get_permalink() . '">' . __( 'Read more about ' . esc_attr( the_title( '', ' &raquo;', false ) ), 'lbd_standard' ) . '</a>';
 }
 endif;
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and standard_continue_reading_link().
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and lbd_standard_continue_reading_link().
  * To override this in a child theme, remove the filter and add your own
  * function tied to the excerpt_more filter hook.
  */
-function standard_auto_excerpt_more( $more ) {
-	return ' &hellip;' . standard_continue_reading_link();
+function lbd_standard_auto_excerpt_more( $more ) {
+	return ' &hellip;' . lbd_standard_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'standard_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'lbd_standard_auto_excerpt_more' );
 
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
  * To override this link in a child theme, remove the filter and add your own
  * function tied to the get_the_excerpt filter hook.
  */
-function standard_custom_excerpt_more( $output ) {
+function lbd_standard_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= ' &hellip;' . standard_continue_reading_link();
+		$output .= ' &hellip;' . lbd_standard_continue_reading_link();
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'standard_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'lbd_standard_custom_excerpt_more' );
 
 /* add alt tags to images */
-function add_alt_tags($content)
-{
-    global $post;
-    preg_match_all('/<img (.*?)\/>/', $content, $images);
-    if(!is_null($images))
-    {
-            foreach($images[1] as $index => $value)
-            {
-                    if(!preg_match('/alt=/', $value))
-                    {
-                            $new_img = str_replace('<img', '<img alt="'.$post->post_title.'"', $images[0][$index]);
-                            $content = str_replace($images[0][$index], $new_img, $content);
-                    }
-            }
-    }
-    return $content;
+function lbd_standard_add_alt_tags( $content ) {
+	global $post;
+	preg_match_all( '/<img (.*?)\/>/', $content, $images );
+	if ( ! is_null( $images ) ) {
+		foreach ( $images[1] as $index => $value ) {
+			if ( ! preg_match( '/alt=/', $value ) ) {
+				$new_img = str_replace( '<img', '<img alt="' . $post->post_title . '"', $images[0][ $index ] );
+				$content = str_replace( $images[0][ $index ], $new_img, $content );
+			}
+		}
+	}
+	return $content;
 }
-add_filter('the_content', 'add_alt_tags', 99999);
-?>
+add_filter( 'the_content', 'lbd_standard_add_alt_tags', 99999 );
