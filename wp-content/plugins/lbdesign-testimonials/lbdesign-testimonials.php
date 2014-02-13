@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: Testimonials
+* Plugin Name: LBDesign Testimonials
 * Description: A simple testimonials custom post type with meta fields
 * Author: Ngaire Ackerley @ LBDesign
 * Version: 1.0
