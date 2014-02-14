@@ -112,16 +112,10 @@ function staffboxes_save_meta( $post_id, $post, $update ) {
 		return;
 
 	// Check the user's permissions.
-	if ( 'page' == $_POST['post_type'] ) {
-
-		if ( ! current_user_can( 'edit_page', $post_id ) )
-			return;
-		  
-	} else {
-
-		if ( ! current_user_can( 'edit_post', $post_id ) )
-			return;
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
 	}
+	
 	/* OK, its safe for us to save the data now. */
 
 	// Sanitize user input.
