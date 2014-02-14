@@ -82,7 +82,7 @@ function staff_function( $post ) {
 <?php }
 
 /* Hook to save the Meta Box Data */
-add_action( 'save_post', 'staffboxes_save_meta', 10, 3 );
+add_action( 'save_post_lbd_staff', 'staffboxes_save_meta', 10, 3 );
 
 /**
  * Save the Staff boxes post meta
