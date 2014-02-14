@@ -44,7 +44,7 @@ function staff_register_post_type() {
 	);
 
 	/* Register the staff post type */
-	register_post_type( 'staff', $staff_args );
+	register_post_type( 'lbd_staff', $staff_args );
 
 }
 
@@ -52,7 +52,7 @@ function staff_register_post_type() {
 add_action( 'add_meta_boxes', 'staffboxes_create' );
 
 function staffboxes_create() {
-	add_meta_box( 'staff_meta', 'Staff Member Details', 'staff_function', 'staff', 'normal', 'high' );
+	add_meta_box( 'staff_meta', 'Staff Member Details', 'staff_function', 'lbd_staff', 'normal', 'high' );
 }
 
 /**
