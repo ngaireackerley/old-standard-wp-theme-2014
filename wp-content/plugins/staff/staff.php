@@ -77,28 +77,28 @@ function staffboxes_save_meta( $post_id ) {
 
 	// Check if our nonce is set.
 	if ( ! isset( $_POST['staff_function_nonce'] ) )
-		return $post_id;
+		return;
 
 	$nonce = $_POST['staff_function_nonce'];
 
 	// Verify that the nonce is valid.
 	if ( ! wp_verify_nonce( $nonce, 'staff_function' ) )
-		return $post_id;
+		return;
 
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
-		return $post_id;
+		return;
 
 	// Check the user's permissions.
 	if ( 'page' == $_POST['post_type'] ) {
 
 		if ( ! current_user_can( 'edit_page', $post_id ) )
-			return $post_id;
+			return;
 		  
 	} else {
 
 		if ( ! current_user_can( 'edit_post', $post_id ) )
-			return $post_id;
+			return;
 	}
 	/* OK, its safe for us to save the data now. */
 
