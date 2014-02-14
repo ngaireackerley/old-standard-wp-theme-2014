@@ -40,5 +40,3 @@ function faq_register_post_type() {
 	register_post_type( 'faq', $faq_args );
 
 }
-
-?>
