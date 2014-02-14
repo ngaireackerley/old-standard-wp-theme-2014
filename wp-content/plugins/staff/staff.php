@@ -82,9 +82,8 @@ function staff_function( $post ) {
 <?php }
 
 /* Hook to save the Meta Box Data */
-add_action( 'save_post', 'staffboxes_save_meta' );
+add_action( 'save_post', 'staffboxes_save_meta', 10, 3 );
 
-function staffboxes_save_meta( $post_id ) {
 /**
  * Save the Staff boxes post meta
  * 
@@ -94,6 +93,7 @@ function staffboxes_save_meta( $post_id ) {
  * @param WP_Post $post The WP_Post object
  * @param bool $update Whether we're updating an existing post
  */
+function staffboxes_save_meta( $post_id, $post, $update ) {
 
 	/* We need to verify this came from the our screen and with proper authorization, because save_post can be triggered at other times. */
 
