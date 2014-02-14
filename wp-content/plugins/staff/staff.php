@@ -117,5 +117,3 @@ function staffboxes_save_meta( $post_id ) {
 		update_post_meta( $post_id, '_staff_email', strip_tags( $data_staff_email ) );
 	}
 }
-
-?>
