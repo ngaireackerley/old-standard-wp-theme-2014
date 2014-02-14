@@ -10,7 +10,13 @@
 /* Set up the post type */
 add_action( 'init', 'staff_register_post_type' );
 
-/* Register post types */
+/**
+ * Register the 'lbd_staff' post type
+ * 
+ * @since 1.0
+ * 
+ * @uses register_post_type()
+ */
 function staff_register_post_type() {
 
 	/* Set up arguements for the staff post type */
@@ -49,6 +55,13 @@ function staffboxes_create() {
 	add_meta_box( 'staff_meta', 'Staff Member Details', 'staff_function', 'staff', 'normal', 'high' );
 }
 
+/**
+ * Display the content of our custom metabox
+ * 
+ * @since 1.0
+ * 
+ * @param WP_Post $post The current WP_Post object
+ */
 function staff_function( $post ) {
 
 	/* Add in nouce field to check later */
@@ -72,6 +85,15 @@ function staff_function( $post ) {
 add_action( 'save_post', 'staffboxes_save_meta' );
 
 function staffboxes_save_meta( $post_id ) {
+/**
+ * Save the Staff boxes post meta
+ * 
+ * @since 1.0
+ * 
+ * @param int $post_id The ID of the post we're saving meta data for
+ * @param WP_Post $post The WP_Post object
+ * @param bool $update Whether we're updating an existing post
+ */
 
 	/* We need to verify this came from the our screen and with proper authorization, because save_post can be triggered at other times. */
 
