@@ -59,12 +59,13 @@ function testimonial_function( $post ) {
 	$testimonial_relation = get_post_meta( $post->ID, '_testimonial_relation', true );
 	$testimonial_location = get_post_meta( $post->ID, '_testimonial_location', true );
 
-	echo 'Please fill out the information below relating to this testimonial member'; ?>
+	echo 'Please fill out the information below relating to this testimonial member';
+	?>
 	<p>Name: <input class="widefat" type="text" name="testimonial_name" value="<?php echo esc_attr( $testimonial_name ); ?>" /></p>
 	<p>Relation (This may be an employment location, job title, place you went to etc.): <input class="widefat" type="text" name="testimonial_relation" value="<?php echo esc_attr( $testimonial_relation ); ?>" /></p>
 	<p>Location: <input class="widefat" type="text" name="testimonial_location" value="<?php echo esc_attr( $testimonial_location ); ?>" /></p>
-
-<?php }
+	<?php
+}
 
 /* Hook to save the Meta Box Data */
 add_action( 'save_post_lbd_testimonials', 'testimonialboxes_save_meta' );

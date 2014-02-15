@@ -73,13 +73,14 @@ function staff_function( $post ) {
 	$staff_tel = get_post_meta( $post->ID, '_staff_tel', true );
 	$staff_email = get_post_meta( $post->ID, '_staff_email', true );
 
-	echo 'Please fill out the information below relating to this staff member'; ?>
+	echo 'Please fill out the information below relating to this staff member';
+	?>
 	<p>Job Title: <input class="widefat" type="text" name="staff_jobtitle" value="<?php echo esc_attr( $staff_jobtitle ); ?>" /></p>
 	<p>Location: <input class="widefat" type="text" name="staff_location" value="<?php echo esc_attr( $staff_location ); ?>" /></p>
 	<p>Tel: <input class="widefat" type="text" name="staff_tel" value="<?php echo esc_attr( $staff_tel ); ?>" /></p>
 	<p>Email: <input class="widefat" type="text" name="staff_email" value="<?php echo esc_attr( $staff_email ); ?>" /></p>
-
-<?php }
+	<?php
+}
 
 /* Hook to save the Meta Box Data */
 add_action( 'save_post_lbd_staff', 'staffboxes_save_meta', 10, 3 );
