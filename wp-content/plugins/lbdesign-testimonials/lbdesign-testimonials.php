@@ -106,5 +106,3 @@ function testimonialboxes_save_meta( $post_id ) {
 		update_post_meta( $post_id, '_testimonial_location', $data_testimonial_location );
 	}
 }
-
-?>
