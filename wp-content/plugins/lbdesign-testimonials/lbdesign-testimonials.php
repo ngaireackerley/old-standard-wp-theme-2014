@@ -38,7 +38,7 @@ function testimonial_register_post_type() {
 	);
 
 	/* Register the testimonial post type */
-	register_post_type( 'testimonials', $testimonial_args );
+	register_post_type( 'lbd_testimonials', $testimonial_args );
 
 }
 
@@ -46,7 +46,7 @@ function testimonial_register_post_type() {
 add_action( 'add_meta_boxes', 'testimonialboxes_create' );
 
 function testimonialboxes_create() {
-	add_meta_box( 'testimonial_meta', 'Testimonial Details', 'testimonial_function', 'testimonials', 'normal', 'high' );
+	add_meta_box( 'testimonial_meta', 'Testimonial Details', 'testimonial_function', 'lbd_testimonials', 'normal', 'high' );
 }
 
 function testimonial_function( $post ) {
