@@ -88,16 +88,9 @@ function testimonialboxes_save_meta( $post_id ) {
 		return;
 
 	// Check the user's permissions.
-	if ( 'page' == $_POST['post_type'] ) {
-
-		if ( ! current_user_can( 'edit_page', $post_id ) )
-			return $post_id;
-		  
-	} else {
-
-		if ( ! current_user_can( 'edit_post', $post_id ) )
-			return $post_id;
-	}
+	if ( ! current_user_can( 'edit_post', $post_id ) )
+		return;
+	
 	/* OK, its safe for us to save the data now. */
 
 	// Sanitize user input.
