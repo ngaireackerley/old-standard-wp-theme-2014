@@ -90,6 +90,8 @@ add_action( 'save_post_lbd_staff', 'staffboxes_save_meta', 10, 3 );
  * 
  * @since 1.0
  * 
+ * @see wp_insert_post()
+ * 
  * @param int $post_id The ID of the post we're saving meta data for
  * @param WP_Post $post The WP_Post object
  * @param bool $update Whether we're updating an existing post

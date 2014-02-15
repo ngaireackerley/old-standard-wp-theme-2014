@@ -10,7 +10,13 @@
 /* Set up the post type */
 add_action( 'init', 'testimonial_register_post_type' );
 
-/* Register post types */
+/**
+ * Register the 'lbd_testimonials' post type
+ * 
+ * @since 1.0
+ * 
+ * @uses register_post_type()
+ */
 function testimonial_register_post_type() {
 
 	/* Set up arguements for the testimonial post type */
@@ -45,10 +51,24 @@ function testimonial_register_post_type() {
 /* Add meta boxes */
 add_action( 'add_meta_boxes', 'testimonialboxes_create' );
 
+/**
+ * Add our custom metabox to the Testimonial post type
+ * 
+ * @since 1.0
+ * 
+ * @uses add_meta_box()
+ */
 function testimonialboxes_create() {
 	add_meta_box( 'testimonial_meta', 'Testimonial Details', 'testimonial_function', 'lbd_testimonials', 'normal', 'high' );
 }
 
+/**
+ * Display the content of our custom metabox
+ * 
+ * @since 1.0
+ * 
+ * @param WP_Post $post The current WP_Post object
+ */
 function testimonial_function( $post ) {
 
 	/* Add in nouce field to check later */
@@ -70,7 +90,18 @@ function testimonial_function( $post ) {
 /* Hook to save the Meta Box Data */
 add_action( 'save_post_lbd_testimonials', 'testimonialboxes_save_meta' );
 
-function testimonialboxes_save_meta( $post_id ) {
+/**
+ * Save the Testimonial boxes post meta
+ * 
+ * @since 1.0
+ * 
+ * @see wp_insert_post()
+ * 
+ * @param int $post_id The ID of the post we're saving meta data for
+ * @param WP_Post $post The WP_Post object
+ * @param bool $update Whether we're updating an existing post
+ */
+function testimonialboxes_save_meta( $post_id, $post, $update ) {
 
 	/* We need to verify this came from the our screen and with proper authorization, because save_post can be triggered at other times. */
 
