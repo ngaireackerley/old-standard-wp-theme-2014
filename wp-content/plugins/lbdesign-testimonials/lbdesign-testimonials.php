@@ -75,17 +75,17 @@ function testimonialboxes_save_meta( $post_id ) {
 
 	// Check if our nonce is set.
 	if ( ! isset( $_POST['testimonial_function_nonce'] ) )
-		return $post_id;
+		return;
 
 	$nonce = $_POST['testimonial_function_nonce'];
 
 	// Verify that the nonce is valid.
 	if ( ! wp_verify_nonce( $nonce, 'testimonial_function' ) )
-		return $post_id;
+		return;
 
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
-		return $post_id;
+		return;
 
 	// Check the user's permissions.
 	if ( 'page' == $_POST['post_type'] ) {
