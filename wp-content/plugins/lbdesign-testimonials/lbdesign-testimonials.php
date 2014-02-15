@@ -67,7 +67,7 @@ function testimonial_function( $post ) {
 <?php }
 
 /* Hook to save the Meta Box Data */
-add_action( 'save_post', 'testimonialboxes_save_meta' );
+add_action( 'save_post_lbd_testimonials', 'testimonialboxes_save_meta' );
 
 function testimonialboxes_save_meta( $post_id ) {
 
