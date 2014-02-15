@@ -101,9 +101,9 @@ function testimonialboxes_save_meta( $post_id ) {
 	/* Verify the metadata is set */
 	if ( isset( $_POST['testimonial_name'] ) ) {
 		/* Save the metadata */
-		update_post_meta( $post_id, '_testimonial_name', strip_tags( $data_testimonial_name ) );
-		update_post_meta( $post_id, '_testimonial_relation', strip_tags( $data_testimonial_relation ) );
-		update_post_meta( $post_id, '_testimonial_location', strip_tags( $data_testimonial_location ) );
+		update_post_meta( $post_id, '_testimonial_name', $data_testimonial_name );
+		update_post_meta( $post_id, '_testimonial_relation', $data_testimonial_relation );
+		update_post_meta( $post_id, '_testimonial_location', $data_testimonial_location );
 	}
 }
 
