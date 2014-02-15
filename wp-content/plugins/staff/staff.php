@@ -127,9 +127,9 @@ function staffboxes_save_meta( $post_id, $post, $update ) {
 	/* Verify the metadata is set */
 	if ( isset( $_POST['staff_jobtitle'] ) ) {
 		/* Save the metadata */
-		update_post_meta( $post_id, '_staff_jobtitle', strip_tags( $data_staff_jobtitle ) );
-		update_post_meta( $post_id, '_staff_location', strip_tags( $data_staff_location ) );
-		update_post_meta( $post_id, '_staff_tel', strip_tags( $data_staff_tel ) );
-		update_post_meta( $post_id, '_staff_email', strip_tags( $data_staff_email ) );
+		update_post_meta( $post_id, '_staff_jobtitle', $data_staff_jobtitle );
+		update_post_meta( $post_id, '_staff_location', $data_staff_location );
+		update_post_meta( $post_id, '_staff_tel', $data_staff_tel );
+		update_post_meta( $post_id, '_staff_email', $data_staff_email );
 	}
 }
