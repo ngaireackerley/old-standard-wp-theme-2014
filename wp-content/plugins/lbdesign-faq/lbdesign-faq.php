@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: FAQ
+* Plugin Name: LBDesign FAQ
 * Description: A simple faq custom post type without meta fields
 * Author: Ngaire Ackerley @ LBDesign
 * Version: 1.0
@@ -8,10 +8,10 @@
 */
 
 /* Set up the post type */
-add_action( 'init', 'faq_register_post_type' );
+add_action( 'init', 'lbdesign_faq_register_post_type' );
 
 /* Register post types */
-function faq_register_post_type() {
+function lbdesign_faq_register_post_type() {
 
 	/* Set up arguements for the faq post type */
 	$faq_args = array(

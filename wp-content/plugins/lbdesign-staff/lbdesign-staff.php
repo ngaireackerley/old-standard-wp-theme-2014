@@ -1,6 +1,6 @@
 <?php
 /**
-* Plugin Name: Staff
+* Plugin Name: LBDesign Staff
 * Description: A simple staff custom post type with meta fields
 * Author: Ngaire Ackerley @ LBDesign
 * Version: 1.0
@@ -8,7 +8,7 @@
 */
 
 /* Set up the post type */
-add_action( 'init', 'staff_register_post_type' );
+add_action( 'init', 'lbdesign_staff_register_post_type' );
 
 /**
  * Register the 'lbd_staff' post type
@@ -17,7 +17,7 @@ add_action( 'init', 'staff_register_post_type' );
  * 
  * @uses register_post_type()
  */
-function staff_register_post_type() {
+function lbdesign_staff_register_post_type() {
 
 	/* Set up arguements for the staff post type */
 	$staff_args = array(

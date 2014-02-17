@@ -4,7 +4,7 @@
 * Description: A simple testimonials custom post type with meta fields
 * Author: Ngaire Ackerley @ LBDesign
 * Version: 1.0
-* Last Updated: 18.12.2013
+* Last Updated: 17.02.2014
 */
 
 /* Set up the post type */
