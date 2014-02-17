@@ -8,14 +8,14 @@ get_header(); ?>
 		} ?>
 	</div><!-- / .colonewide -->
 	<div class="coltwothirds leftcol">
-		<?php if ( post_type_exists( 'staff' ) ) { ?>
+		<?php if ( post_type_exists( 'lbd_staff' ) ) { ?>
 			<h1><?php the_title(); ?></h1>	
 			<?php if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			} ?>
 			<?php 
 			// the query
-			$args = array ( 'post_type' => 'staff', 'order' => 'ASC', 'posts_per_page' => -1 );
+			$args = array ( 'post_type' => 'lbd_staff', 'order' => 'ASC', 'posts_per_page' => -1 );
 			$staff_query = new WP_Query( $args );
 			if ( $staff_query->have_posts() ) : ?>
 			<ul class="bloglist">

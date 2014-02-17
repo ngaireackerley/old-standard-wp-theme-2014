@@ -8,14 +8,14 @@ get_header(); ?>
 		} ?>
 	</div><!-- / .colonewide -->
 	<div class="coltwothirds leftcol">
-		<?php if ( post_type_exists( 'testimonials' ) ) { ?>
+		<?php if ( post_type_exists( 'lbd_testimonials' ) ) { ?>
 			<h1><?php the_title(); ?></h1>	
 			<?php if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			} ?>
 			<?php 
 			// the query
-			$testimonialsargs = array ( 'post_type' => 'testimonials', 'order' => 'ASC', 'posts_per_page' => 10 );
+			$testimonialsargs = array ( 'post_type' => 'lbd_testimonials', 'order' => 'ASC', 'posts_per_page' => 10 );
 			$testimonials_query = new WP_Query( $testimonialsargs );
 			if ( $testimonials_query->have_posts() ) : ?>
 			<ul class="bloglist">

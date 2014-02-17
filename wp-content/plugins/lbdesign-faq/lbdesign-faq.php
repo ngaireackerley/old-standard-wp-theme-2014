@@ -22,6 +22,7 @@ function lbdesign_faq_register_post_type() {
 			'excerpt',
 			'editor'
 		),
+	    'rewrite' => array( 'slug' => 'faq' ),
 		'labels' => array(
 			'name' => 'FAQs',
 			'singular_name' => 'FAQ',

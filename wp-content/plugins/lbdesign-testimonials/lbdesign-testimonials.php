@@ -29,6 +29,7 @@ function testimonial_register_post_type() {
 			'excerpt',
 			'editor'
 		),
+	    'rewrite' => array( 'slug' => 'testimonials' ),
 		'labels' => array(
 			'name' => 'Testimonials',
 			'singular_name' => 'Testimonial',

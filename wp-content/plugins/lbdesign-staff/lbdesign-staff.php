@@ -4,7 +4,7 @@
 * Description: A simple staff custom post type with meta fields
 * Author: Ngaire Ackerley @ LBDesign
 * Version: 1.0
-* Last Updated: 11.12.2013
+* Last Updated: 17.02.2014
 */
 
 /* Set up the post type */
@@ -29,6 +29,7 @@ function lbdesign_staff_register_post_type() {
 			'excerpt',
 			'editor'
 		),
+	    'rewrite' => array( 'slug' => 'staff' ),
 		'labels' => array(
 			'name' => 'Staff',
 			'singular_name' => 'Staff Member',
