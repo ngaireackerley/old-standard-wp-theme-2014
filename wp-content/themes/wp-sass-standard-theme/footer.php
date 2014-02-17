@@ -22,7 +22,7 @@
 				<?php
 					$this_year = date( 'Y' );
 					if ( $this_year != 2013 ) {
-						echo '2013 - ' . $this_year;
+						echo '2013 - ' . $this_year . ', all rights reserved.';
 					} else {
 						echo $this_year . ', all rights reserved.';
 					} ?><br />A web creation from <a href="http://lbdesign.tv">LBDesign</a>.</p>
