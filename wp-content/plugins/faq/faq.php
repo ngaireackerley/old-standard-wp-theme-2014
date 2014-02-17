@@ -37,8 +37,6 @@ function faq_register_post_type() {
 	);
 
 	/* Register the faq post type */
-	register_post_type( 'faq', $faq_args );
+	register_post_type( 'lbd_faq', $faq_args );
 
 }
-
-?>
