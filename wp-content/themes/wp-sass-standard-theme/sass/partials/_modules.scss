@@ -96,6 +96,10 @@ th, td {
 #breadcrumbs {
 	font-size: 0.8em;
 }
+.featuredimg {
+	float: left;
+	margin: 0 0 ($gutter-width-vertical*2) 0;
+}
 /*! Sidebars */
 ul.sidebarone, ul.sidebartwo {
 	list-style: outside none;

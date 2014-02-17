@@ -8,7 +8,9 @@ get_header(); ?>
 		} ?>
 		<h1><?php esc_attr( the_title() ); ?></h1>
 		<?php if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
+			echo '<span class="featuredimg">';
+				the_post_thumbnail();
+			echo '</span>';
 		} ?>
 			<?php the_content(); ?>
 	</div><!-- /.colonewide -->

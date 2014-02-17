@@ -11,7 +11,9 @@ get_header(); ?>
 		<?php if ( post_type_exists( 'lbd_faq' ) ) { ?>
 			<h1><?php the_title(); ?></h1>	
 			<?php if ( has_post_thumbnail() ) {
+				echo '<span class="featuredimg">';
 				the_post_thumbnail();
+			echo '</span>';
 			} ?>
 			<?php 
 			// the query
