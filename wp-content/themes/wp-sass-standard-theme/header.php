@@ -37,7 +37,7 @@
 				</div><!-- / .coltwothird rightcol -->
 			</div><!-- / .inner -->
 		<div class="rowtwo">
-			<div class="inner">
+			<div class="inner"><a class="mmenu">Menu</a>
 				<div class="mobilemenu"><?php wp_nav_menu( array( 'theme_location' => 'mobile' ) ); ?></div>
 				<div class="mainmenu"><?php wp_nav_menu( array( 'theme_location' => 'mainnav' ) ); ?></div>
 			</div><!-- inner -->

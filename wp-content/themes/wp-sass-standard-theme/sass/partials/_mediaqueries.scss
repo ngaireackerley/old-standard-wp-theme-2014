@@ -21,6 +21,10 @@
 		font-size: 0.9em;
 		padding:5px;
 	}
+	.rowtwo a {
+		padding: 8px 8px;
+		font-size: 0.9em;
+	}
 }
 /*!-- Mobile landscape */
 @media screen and (max-width: 500px) {
@@ -79,26 +83,60 @@
 	header .coltwothirds {
 		text-align: center;
 	}
+	.rowtwo .inner a.mmenu {
+		display: block; 
+		width: 100%;
+		text-align: left;
+		visibility: visible;
+		cursor: pointer; 
+		background: url( images/mobile-menu.png ) no-repeat 5px center;
+		padding-left: 50px;
+		font-size: 1.1em;
+		&:hover, &:focus {
+			background: url( images/mobile-menu.png ) no-repeat 5px center $color3;
+			color: $color1;
+			text-decoration: none;
+		}
+	}
 	header .rowtwo .inner .mobilemenu {
-		display: block;
 		ul li {
 			width: 100%;
+			text-decoration: none;
+			border-bottom: 1px dotted $color1;
 			a {
-				margin: 5px 0;
+				font-size: 1em;
+				&:hover, &:focus {
+					background: $color3;
+					color: $color1;
+					text-decoration: none;
+				}
 			}
-			ul, ul ul {
-				//display: block;
-				position: relative;
-				left: 0;
-				width: 100%;
-				top: 0;
-			}
+		}
+	}
+	header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu {
+		position: relative;
+		left: 0;
+		width: 100%;
+		top: 0;
+		display: block;
+		border-bottom: none;
+		a {
+			background: $color4;
+			line-height: 1.3em;
+			padding: 10px;
+			width: 100%;
+			height: auto;
+			text-decoration: none;
+			border-bottom: none;
+		}
+		li a:hover, li a:focus {
+			background-color: $color3;
+			width: 100%;
 		}
 	}
 	.mainmenu {
 		display: none;
 	}
-	header
 	.footer-row-two ul {
 		float: left;
 	}
@@ -156,5 +194,20 @@
 	.blogimgsingle {
 		clear: both;
 		max-width: 100%;
+	}
+}
+
+/*!-- Print Styles */
+@media print {
+	img, .mainmenu, .mobilemenu {
+		display: none;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $fontset2;
+		font-weight: bold;
+	}
+	header, footer, .footer-row-one, .footer-row-two, .homepghighlight {
+		background: $color1;
+		color: $color2;
 	}
 }

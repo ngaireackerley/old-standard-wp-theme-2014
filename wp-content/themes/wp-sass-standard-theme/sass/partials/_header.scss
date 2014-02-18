@@ -84,16 +84,16 @@ header .coltwothirds {
 	text-decoration: none;
 	border-bottom: 1px dotted $color1;
 }
-.rowtwo .inner li:hover > a,
-.rowtwo .inner ul ul :hover > a {
+.rowtwo .inner .mainmenu li:hover > a,
+.rowtwo .inner .mainmenu ul ul :hover > a {
 	background: $color3;
 	color: #fff;
 	text-decoration: none;
 }
-.rowtwo .inner ul li:hover > ul {
+.rowtwo .inner .mainmenu ul li:hover > ul {
 	display: block;
 }
-.rowtwo .inner ul li.current-menu-item > a, .rowtwo .inner ul li.current-menu-ancestor > a, .rowtwo .inner ul li.current-menu-parent > a {
+.rowtwo .inner .mainmenu ul li.current-menu-item > a, .rowtwo .inner .mainmenu ul li.current-menu-ancestor > a, .rowtwo .inner .mainmenu ul li.current-menu-parent > a {
 	color: $color1;
 	background: $color3;
 }
@@ -105,6 +105,9 @@ header .coltwothirds {
 	background: $color3;
 }
 /* mobile menu */
+.rowtwo .inner a.mmenu {
+	display: none;
+}
 .mobilemenu {
 	display: none;
 }

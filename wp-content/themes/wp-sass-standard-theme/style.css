@@ -481,18 +481,18 @@ header .coltwothirds {
   border-bottom: 1px dotted white; }
 
 /* line 88, sass/partials/_header.scss */
-.rowtwo .inner li:hover > a,
-.rowtwo .inner ul ul :hover > a {
+.rowtwo .inner .mainmenu li:hover > a,
+.rowtwo .inner .mainmenu ul ul :hover > a {
   background: #585340;
   color: #fff;
   text-decoration: none; }
 
 /* line 93, sass/partials/_header.scss */
-.rowtwo .inner ul li:hover > ul {
+.rowtwo .inner .mainmenu ul li:hover > ul {
   display: block; }
 
 /* line 96, sass/partials/_header.scss */
-.rowtwo .inner ul li.current-menu-item > a, .rowtwo .inner ul li.current-menu-ancestor > a, .rowtwo .inner ul li.current-menu-parent > a {
+.rowtwo .inner .mainmenu ul li.current-menu-item > a, .rowtwo .inner .mainmenu ul li.current-menu-ancestor > a, .rowtwo .inner .mainmenu ul li.current-menu-parent > a {
   color: white;
   background: #585340; }
 
@@ -506,6 +506,10 @@ header .coltwothirds {
 
 /* mobile menu */
 /* line 108, sass/partials/_header.scss */
+.rowtwo .inner a.mmenu {
+  display: none; }
+
+/* line 111, sass/partials/_header.scss */
 .mobilemenu {
   display: none; }
 
@@ -1152,112 +1156,152 @@ ul.subnavlinks {
   /* line 20, sass/partials/_mediaqueries.scss */
   a.homelink {
     font-size: 0.9em;
-    padding: 5px; } }
+    padding: 5px; }
+
+  /* line 24, sass/partials/_mediaqueries.scss */
+  .rowtwo a {
+    padding: 8px 8px;
+    font-size: 0.9em; } }
 /*!-- Mobile landscape */
 @media screen and (max-width: 500px) {
-  /* line 27, sass/partials/_mediaqueries.scss */
+  /* line 31, sass/partials/_mediaqueries.scss */
   .colonethird {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 33, sass/partials/_mediaqueries.scss */
+  /* line 37, sass/partials/_mediaqueries.scss */
   .coltwothirds {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 39, sass/partials/_mediaqueries.scss */
+  /* line 43, sass/partials/_mediaqueries.scss */
   .colonehalfthreecol {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 45, sass/partials/_mediaqueries.scss */
+  /* line 49, sass/partials/_mediaqueries.scss */
   .colonehalf {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 51, sass/partials/_mediaqueries.scss */
+  /* line 55, sass/partials/_mediaqueries.scss */
   .threecols {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 57, sass/partials/_mediaqueries.scss */
+  /* line 61, sass/partials/_mediaqueries.scss */
   .colonefourth {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 63, sass/partials/_mediaqueries.scss */
+  /* line 67, sass/partials/_mediaqueries.scss */
   .rightcol {
     padding-left: 0; }
 
-  /* line 66, sass/partials/_mediaqueries.scss */
+  /* line 70, sass/partials/_mediaqueries.scss */
   .leftcol {
     padding-right: 0; }
 
-  /* line 69, sass/partials/_mediaqueries.scss */
+  /* line 73, sass/partials/_mediaqueries.scss */
   .contentpage .rightcol {
     margin-top: 40px; }
 
-  /* line 72, sass/partials/_mediaqueries.scss */
+  /* line 76, sass/partials/_mediaqueries.scss */
   header .colonethird {
     padding: 0 0 20px 0; }
-    /* line 74, sass/partials/_mediaqueries.scss */
+    /* line 78, sass/partials/_mediaqueries.scss */
     header .colonethird a {
       width: 66.66667%;
       margin: 0 auto; }
 
-  /* line 79, sass/partials/_mediaqueries.scss */
+  /* line 83, sass/partials/_mediaqueries.scss */
   header .coltwothirds {
     text-align: center; }
 
-  /* line 82, sass/partials/_mediaqueries.scss */
-  header .rowtwo .inner .mobilemenu {
-    display: block; }
-    /* line 84, sass/partials/_mediaqueries.scss */
-    header .rowtwo .inner .mobilemenu ul li {
-      width: 100%; }
-      /* line 86, sass/partials/_mediaqueries.scss */
-      header .rowtwo .inner .mobilemenu ul li a {
-        margin: 5px 0; }
-      /* line 89, sass/partials/_mediaqueries.scss */
-      header .rowtwo .inner .mobilemenu ul li ul, header .rowtwo .inner .mobilemenu ul li ul ul {
-        position: relative;
-        left: 0;
-        width: 100%;
-        top: 0; }
+  /* line 86, sass/partials/_mediaqueries.scss */
+  .rowtwo .inner a.mmenu {
+    display: block;
+    width: 100%;
+    text-align: left;
+    visibility: visible;
+    cursor: pointer;
+    background: url(images/mobile-menu.png) no-repeat 5px center;
+    padding-left: 50px;
+    font-size: 1.1em; }
+    /* line 95, sass/partials/_mediaqueries.scss */
+    .rowtwo .inner a.mmenu:hover, .rowtwo .inner a.mmenu:focus {
+      background: url(images/mobile-menu.png) no-repeat 5px center #585340;
+      color: white;
+      text-decoration: none; }
 
-  /* line 98, sass/partials/_mediaqueries.scss */
+  /* line 102, sass/partials/_mediaqueries.scss */
+  header .rowtwo .inner .mobilemenu ul li {
+    width: 100%;
+    text-decoration: none;
+    border-bottom: 1px dotted white; }
+    /* line 106, sass/partials/_mediaqueries.scss */
+    header .rowtwo .inner .mobilemenu ul li a {
+      font-size: 1em; }
+      /* line 108, sass/partials/_mediaqueries.scss */
+      header .rowtwo .inner .mobilemenu ul li a:hover, header .rowtwo .inner .mobilemenu ul li a:focus {
+        background: #585340;
+        color: white;
+        text-decoration: none; }
+
+  /* line 116, sass/partials/_mediaqueries.scss */
+  header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu {
+    position: relative;
+    left: 0;
+    width: 100%;
+    top: 0;
+    display: block;
+    border-bottom: none; }
+    /* line 123, sass/partials/_mediaqueries.scss */
+    header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu a {
+      background: #8a151b;
+      line-height: 1.3em;
+      padding: 10px;
+      width: 100%;
+      height: auto;
+      text-decoration: none;
+      border-bottom: none; }
+    /* line 132, sass/partials/_mediaqueries.scss */
+    header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu li a:hover, header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu li a:focus {
+      background-color: #585340;
+      width: 100%; }
+
+  /* line 137, sass/partials/_mediaqueries.scss */
   .mainmenu {
     display: none; }
 
-  /* line 102, sass/partials/_mediaqueries.scss */
-  header
+  /* line 140, sass/partials/_mediaqueries.scss */
   .footer-row-two ul {
     float: left; }
 
-  /* line 105, sass/partials/_mediaqueries.scss */
+  /* line 143, sass/partials/_mediaqueries.scss */
   footer .footer-row-two {
     text-align: center; }
-    /* line 107, sass/partials/_mediaqueries.scss */
+    /* line 145, sass/partials/_mediaqueries.scss */
     footer .footer-row-two .coltwothirds .socialmedia {
       float: none;
       width: 50%;
       margin: 0 auto; }
-    /* line 112, sass/partials/_mediaqueries.scss */
+    /* line 150, sass/partials/_mediaqueries.scss */
     footer .footer-row-two .socialmedia a:last-child {
       margin: 0; }
-    /* line 115, sass/partials/_mediaqueries.scss */
+    /* line 153, sass/partials/_mediaqueries.scss */
     footer .footer-row-two ul {
       clear: both;
       float: none;
@@ -1265,45 +1309,60 @@ ul.subnavlinks {
       margin: 0 auto; }
 
   /* homepage */
-  /* line 123, sass/partials/_mediaqueries.scss */
+  /* line 161, sass/partials/_mediaqueries.scss */
   .homepghighlight {
     padding: 10px; }
 
   /* if comments are added */
-  /* line 127, sass/partials/_mediaqueries.scss */
+  /* line 165, sass/partials/_mediaqueries.scss */
   .comments p label {
     width: 100%;
     margin: 0 0 10px 0; }
 
-  /* line 131, sass/partials/_mediaqueries.scss */
+  /* line 169, sass/partials/_mediaqueries.scss */
   .comments p input, .comments p textarea {
     width: 100%;
     margin: 0 0 10px 0; }
 
   /* if contact form with gravity forms is added */
-  /* line 136, sass/partials/_mediaqueries.scss */
+  /* line 174, sass/partials/_mediaqueries.scss */
   #gform_1 ul li .ginput_container, #gform_1 ul li label {
     width: 100%; }
 
   /* if solioquy is added - allows for 3 images otherwise caption padding needs adjusting and/or alignment of text */
-  /* line 140, sass/partials/_mediaqueries.scss */
+  /* line 178, sass/partials/_mediaqueries.scss */
   .soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
     padding: 10px 20% !important;
     margin: 0 auto !important; } }
 /*!-- Mobile portrait */
 @media screen and (max-width: 400px) {
-  /* line 147, sass/partials/_mediaqueries.scss */
+  /* line 185, sass/partials/_mediaqueries.scss */
   footer .footer-row-two .coltwothirds .socialmedia {
     float: none;
     width: 65%;
     margin: 0 auto; }
 
-  /* line 152, sass/partials/_mediaqueries.scss */
+  /* line 190, sass/partials/_mediaqueries.scss */
   .footer-row-two .socialmedia a:last-child {
     margin: 0; }
 
   /* if using the staff plugin */
-  /* line 156, sass/partials/_mediaqueries.scss */
+  /* line 194, sass/partials/_mediaqueries.scss */
   .blogimgsingle {
     clear: both;
     max-width: 100%; } }
+/*!-- Print Styles */
+@media print {
+  /* line 202, sass/partials/_mediaqueries.scss */
+  img, .mainmenu, .mobilemenu {
+    display: none; }
+
+  /* line 205, sass/partials/_mediaqueries.scss */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold; }
+
+  /* line 209, sass/partials/_mediaqueries.scss */
+  header, footer, .footer-row-one, .footer-row-two, .homepghighlight {
+    background: white;
+    color: black; } }

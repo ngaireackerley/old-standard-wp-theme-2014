@@ -94,6 +94,9 @@ function lbd_standard_scripts() {
 	
 	// Enqueue the main stylesheet
 	wp_enqueue_style( 'lbd_standard_style', get_stylesheet_uri(), array( 'lbd_standard_italiana' ), $theme->Version );
+
+	//Enqueue js script for mobile menu
+	wp_enqueue_script( 'lbd_mobilemenu', get_stylesheet_directory_uri() . '/js/mobilemenu.js', array('jquery'), $theme->Version );
 	
 }
 
