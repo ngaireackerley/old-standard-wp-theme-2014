@@ -145,3 +145,16 @@ ul.subnavlinks {
 		}
 	}
 }
+/*! blog posts on the homepage */
+h2.homeblogposts {
+	font-size: 1.1em;
+}
+.homeblogdate {
+	font-size: 0.7em;
+	margin-bottom: 5px;
+	color: lighten($color2, 50%);
+}
+.bloglist li.homeblogitem {
+	margin: 0 0 10px 0;
+	padding: 0 0 10px 0;
+}

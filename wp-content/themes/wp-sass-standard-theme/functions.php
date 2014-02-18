@@ -380,3 +380,25 @@ function lbd_standard_add_alt_tags( $content ) {
 	return $content;
 }
 add_filter( 'the_content', 'lbd_standard_add_alt_tags', 99999 );
+
+/* custom homepage excerpts for blog */
+function lbd_excerptlength_teaser( $length ) {
+    return 20;
+}
+function lbd_excerptmore($more) {
+return ' ... <a href="'. get_permalink() . '">' . __( 'Read more about ' . esc_attr(the_title('', ' &raquo;', false))) . ' </a>';
+}
+function lbd_excerpt($length_callback='', $more_callback='') {
+global $post;
+if(function_exists($length_callback)){
+add_filter('excerpt_length', $length_callback);
+}
+if(function_exists($more_callback)){
+add_filter('excerpt_more', $more_callback);
+}
+$output = get_the_excerpt();
+$output = apply_filters('wptexturize', $output);
+$output = apply_filters('convert_chars', $output);
+$output = '<p>'.$output.'</p>';
+echo $output;
+ }

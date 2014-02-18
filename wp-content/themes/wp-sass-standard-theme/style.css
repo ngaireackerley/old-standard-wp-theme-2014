@@ -1134,6 +1134,22 @@ ul.subnavlinks {
         color: white;
         text-decoration: none; }
 
+/*! blog posts on the homepage */
+/* line 149, sass/partials/_options.scss */
+h2.homeblogposts {
+  font-size: 1.1em; }
+
+/* line 152, sass/partials/_options.scss */
+.homeblogdate {
+  font-size: 0.7em;
+  margin-bottom: 5px;
+  color: gray; }
+
+/* line 157, sass/partials/_options.scss */
+.bloglist li.homeblogitem {
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0; }
+
 /*! Media Queries */
 /*!-- Tablet portrait / Small landscape */
 @media screen and (max-width: 700px) {

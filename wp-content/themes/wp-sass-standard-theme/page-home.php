@@ -51,7 +51,7 @@ get_header(); ?>
 		</div><!-- / .colonehalf rightcol -->
 		<div class="threecols leftcol clear">
 			<!-- pull in custom field from homepage row one section -->
-			<?php
+			<!--<?php
 			// image
 			if ( function_exists( 'get_field' ) ) {
 				if ( get_field( 'optional_image_for_row_two_left' ) ) {
@@ -69,7 +69,31 @@ get_header(); ?>
 					echo '<a class="homelink" href="' . get_field( 'link_for_row_two_left' ) . '">' . get_field( 'text_for_a_link_for_row_two_left' ) . ' &raquo; </a>';
 				}
 			}
-			?>
+			?>-->
+			<!-- pull in blog posts if there are any with image thumbnails -->
+			<?php // the query
+			$args = array ( 'post_type' => 'post', 'orderby' => 'date', 'order' => 'DSC', 'posts_per_page' => 3, 'ignore_sticky_posts' => 1 );
+			$the_query = new WP_Query( $args );
+			if ( $the_query->have_posts() ) : ?>
+				<ul class="bloglist">
+				  <!-- the loop -->
+				  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+				  	<li class="homeblogitem">
+				  		<a href="<?php the_permalink() ?>" class="bloglink">
+						<?php if ( has_post_thumbnail() ) {
+							echo '<span class="blogimg">';
+							the_post_thumbnail();
+							echo '</span>';
+						} ?>
+					    <h2 class="homeblogposts"><?php the_title(); ?></h2></a>
+					    <p class="homeblogdate">POSTED: <?php echo get_the_date( 'j-M-Y' ); ?></p>
+						<?php lbd_excerpt('lbd_excerptlength_teaser', 'lbd_excerptmore'); ?>
+					</li>
+				  <?php endwhile; ?>
+				  <!-- end of the loop -->
+				</ul>
+			<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
 		</div><!-- / .threecols leftcol -->
 		<div class="threecols leftcol rightcol">
 			<!-- pull in custom field from homepage row one section -->
