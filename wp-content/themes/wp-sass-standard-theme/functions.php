@@ -97,7 +97,6 @@ function lbd_standard_scripts() {
 
 	//Enqueue js script for mobile menu
 	wp_enqueue_script( 'lbd_mobilemenu', get_stylesheet_directory_uri() . '/js/mobilemenu.js', array('jquery'), $theme->Version );
-	
 }
 
 /**

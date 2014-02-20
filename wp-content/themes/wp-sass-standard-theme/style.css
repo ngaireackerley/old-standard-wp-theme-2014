@@ -1150,6 +1150,11 @@ h2.homeblogposts {
   margin: 0 0 10px 0;
   padding: 0 0 10px 0; }
 
+/* Events CPT Plugin */
+/* line 162, sass/partials/_options.scss */
+.eventdate {
+  margin-bottom: 5px; }
+
 /*! Media Queries */
 /*!-- Tablet portrait / Small landscape */
 @media screen and (max-width: 700px) {
