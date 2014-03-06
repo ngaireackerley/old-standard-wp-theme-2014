@@ -15,9 +15,19 @@ footer ul {
 	ul li {
 		color: $color4;
 	}
-	p, a {
+	a, .textwidget {
 		font-size: 0.9em;
 		color: lighten($color2, 30%);
+		font-weight: 300;
+		line-height: 1.4em;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	.post-date {
+		font-size: 0.9em;
+		color: $color4;
+		font-weight: 300;
+		line-height: 1.4em;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
 	a:hover, a:focus {
 		color: $color4;
@@ -44,6 +54,8 @@ footer ul {
 		@include border-radius(5px);
 		padding: 3px 0;
 		width: colwidth(8);
+		font-size: 0.9em;
+		font-weight: 300;
 	}
 }
 .footer-row-two {
@@ -72,6 +84,7 @@ footer ul {
 	}
 	a {
 		color: $color1;
+		text-decoration: none;
 	}
 	a:hover, a:focus {
 		color: $color5;

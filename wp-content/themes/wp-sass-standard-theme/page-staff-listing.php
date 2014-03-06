@@ -28,7 +28,7 @@ get_header(); ?>
 					<?php if ( has_post_thumbnail() ) {
 						echo '<span class="blogimg">';
 						the_post_thumbnail();
-						echo '</span><div class="hasimg">';
+						echo '</span>';
 					} ?>
 					<h2><?php echo the_title(); ?></h2></a>
 					<!-- check for custom meta, then display if exisits -->
@@ -43,12 +43,9 @@ get_header(); ?>
 					}
 					the_excerpt(); 
 					//if has image close the div that pushes text in line
-					if ( has_post_thumbnail() ) {
-						echo '</div><!-- / .hasimg -->';
-					} ?>
+					?>
 				</li>
 				<?php endwhile; ?>
-
 			</ul>
 			<?php wp_reset_postdata(); endif; ?>
 		<?php } ?>

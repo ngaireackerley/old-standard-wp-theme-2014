@@ -64,9 +64,11 @@
 }
 .rightcol {
 	margin-left: ($gutter-width*2);
+	margin-bottom: ($gutter-width*2);
 }
 .leftcol {
 	margin-right: ($gutter-width*2);
+	margin-bottom: ($gutter-width*2);
 }
 .threecols {
 	width: (colwidth(4) - ($gutter-width*2.7));

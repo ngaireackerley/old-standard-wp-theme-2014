@@ -17,7 +17,7 @@
 	</div><!-- / .footer-row-one -->
 	<div class="footer-row-two">		
 		<div class="inner">
-			<div class="threecols leftcol">
+			<div class="colonehalf leftcol">
 				<p>&copy; Client
 				<?php
 					$this_year = date( 'Y' );
@@ -26,13 +26,13 @@
 					} else {
 						echo $this_year . ', all rights reserved.';
 					} ?><br />A web creation from <a href="http://lbdesign.tv">LBDesign</a>.</p>
-			</div><!-- .threecols leftcol -->
-			<div class="coltwothirds rightcol">
+			</div><!-- .onehalf leftcol -->
+			<div class="colonehalf rightcol">
 				<!-- social media -->
-				<div class="socialmedia">
 					<?php
 					if ( function_exists( 'get_field' ) ) {
-						$homepage = 4;
+						echo '<div class="socialmedia">';
+						$homepage = 1361; //need to adjust ID per site
 						if ( $youtube_link = get_field( 'youtube_link', $homepage ) ) {
 							echo '<a href="' . esc_url( $youtube_link ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/youtube-20px.png" alt="Twitter" /></a>';
 						}
@@ -51,12 +51,11 @@
 						if ( $rss_feed_link = get_field( 'rss_feed_link', $homepage ) ) {
 							echo '<a href="' . esc_url( $rss_feed_link ) . '"><img src="' . get_stylesheet_directory_uri() . '/images/rss-20px.png" alt="Twitter" /></a>';
 						}
-					}
-					?>
-				</div><!-- / .socialmedia -->
+						echo '</div>';
+					} ?>
 				<!-- menu -->
 				<?php wp_nav_menu( array( 'theme_location' => 'footer', 'before' => '<span class="divider">&nbsp;|&nbsp;</span>' ) ); ?>
-			</div><!-- /coltwothirds rightcol -->
+			</div><!-- /onehalf rightcol -->
 		</div><!-- / .inner-->
 	</div><!-- / .footer-row-two -->
 </footer><!-- / footer -->

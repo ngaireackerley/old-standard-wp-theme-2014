@@ -3,7 +3,7 @@
 get_header(); ?>
 	<div class="inner contentpage">
 		<div class="colonewide">
-			<?php if ( function_exists( 'soliloquy_slider' ) ) soliloquy_slider( '82' ); ?>
+			<?php if ( function_exists( 'soliloquy_slider' ) ) soliloquy_slider( 'homepage' ); ?>
 		</div><!-- /.colonewide  -->
 		<div class="colonehalf leftcol homepghighlight">
 			<!-- pull in custom field from homepage row one section -->

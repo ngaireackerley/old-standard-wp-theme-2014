@@ -30,7 +30,7 @@ get_header(); ?>
 				
 		<?php comments_template( '', true ); ?>
 		<!-- edit ID based on the page of the blog/news -->
-		<a class="backlink" href="<?Php echo get_permalink( 1066 ); ?>">&laquo; Back to Blog</a>
+		<a class="backlink" href="<?Php echo get_permalink( 1409 ); ?>">&laquo; Back to Blog</a>
 	</div><!-- / .coltwothirds leftcol -->
 	<div class="colonethird rightcol">
 		<?php get_sidebar(); ?>

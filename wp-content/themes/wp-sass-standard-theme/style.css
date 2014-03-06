@@ -365,26 +365,28 @@ table {
 
 /* line 65, sass/partials/_layout.scss */
 .rightcol {
-  margin-left: 2.08333%; }
+  margin-left: 2.08333%;
+  margin-bottom: 2.08333%; }
 
-/* line 68, sass/partials/_layout.scss */
+/* line 69, sass/partials/_layout.scss */
 .leftcol {
-  margin-right: 2.08333%; }
+  margin-right: 2.08333%;
+  margin-bottom: 2.08333%; }
 
-/* line 71, sass/partials/_layout.scss */
+/* line 73, sass/partials/_layout.scss */
 .threecols {
   width: 30.52083%;
   float: left; }
-  /* line 74, sass/partials/_layout.scss */
+  /* line 76, sass/partials/_layout.scss */
   .threecols img {
     max-width: 100%;
     height: auto; }
 
-/* line 79, sass/partials/_layout.scss */
+/* line 81, sass/partials/_layout.scss */
 .colonehalfthreecol {
   width: 47.1875%;
   float: left; }
-  /* line 82, sass/partials/_layout.scss */
+  /* line 84, sass/partials/_layout.scss */
   .colonehalfthreecol img {
     max-width: 100%;
     height: auto; }
@@ -534,19 +536,29 @@ footer ul {
   .footer-row-one ul li {
     color: #8a151b; }
   /* line 18, sass/partials/_footer.scss */
-  .footer-row-one p, .footer-row-one a {
+  .footer-row-one a, .footer-row-one .textwidget {
     font-size: 0.9em;
-    color: #4d4d4d; }
-  /* line 22, sass/partials/_footer.scss */
+    color: #4d4d4d;
+    font-weight: 300;
+    line-height: 1.4em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  /* line 25, sass/partials/_footer.scss */
+  .footer-row-one .post-date {
+    font-size: 0.9em;
+    color: #8a151b;
+    font-weight: 300;
+    line-height: 1.4em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  /* line 32, sass/partials/_footer.scss */
   .footer-row-one a:hover, .footer-row-one a:focus {
     color: #8a151b;
     text-decoration: underline; }
-  /* line 26, sass/partials/_footer.scss */
+  /* line 36, sass/partials/_footer.scss */
   .footer-row-one .widget-container {
     margin-bottom: 20px;
     float: left;
     width: 100%; }
-  /* line 31, sass/partials/_footer.scss */
+  /* line 41, sass/partials/_footer.scss */
   .footer-row-one input[type="submit"] {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     -webkit-border-radius: 5px;
@@ -562,7 +574,7 @@ footer ul {
     width: 29.16667%;
     font-weight: 300;
     font-size: 0.9em; }
-  /* line 43, sass/partials/_footer.scss */
+  /* line 53, sass/partials/_footer.scss */
   .footer-row-one input[type="text"] {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -570,57 +582,60 @@ footer ul {
     -o-border-radius: 5px;
     border-radius: 5px;
     padding: 3px 0;
-    width: 66.66667%; }
+    width: 66.66667%;
+    font-size: 0.9em;
+    font-weight: 300; }
 
-/* line 49, sass/partials/_footer.scss */
+/* line 61, sass/partials/_footer.scss */
 .footer-row-two {
   background: #5e0e12;
   padding: 20px 0;
   font-size: 0.8em; }
-  /* line 53, sass/partials/_footer.scss */
+  /* line 65, sass/partials/_footer.scss */
   .footer-row-two ul {
     list-style: none outside;
     margin: 0;
     padding: 0;
     float: right; }
-    /* line 58, sass/partials/_footer.scss */
+    /* line 70, sass/partials/_footer.scss */
     .footer-row-two ul li {
       display: inline;
       width: auto;
       margin: 0;
       padding: 0; }
-      /* line 63, sass/partials/_footer.scss */
+      /* line 75, sass/partials/_footer.scss */
       .footer-row-two ul li .divider {
         display: inline;
         padding: 0 2px;
         color: white; }
-    /* line 69, sass/partials/_footer.scss */
+    /* line 81, sass/partials/_footer.scss */
     .footer-row-two ul li:first-child .divider {
       display: none; }
-  /* line 73, sass/partials/_footer.scss */
+  /* line 85, sass/partials/_footer.scss */
   .footer-row-two a {
-    color: white; }
-  /* line 76, sass/partials/_footer.scss */
+    color: white;
+    text-decoration: none; }
+  /* line 89, sass/partials/_footer.scss */
   .footer-row-two a:hover, .footer-row-two a:focus {
     color: #b7ae9d;
     text-decoration: underline; }
-  /* line 80, sass/partials/_footer.scss */
+  /* line 93, sass/partials/_footer.scss */
   .footer-row-two p {
     margin: 0;
     padding: 0;
     color: white;
     line-height: 1.7em; }
-  /* line 86, sass/partials/_footer.scss */
+  /* line 99, sass/partials/_footer.scss */
   .footer-row-two .socialmedia {
     float: right;
     width: 100%; }
-    /* line 89, sass/partials/_footer.scss */
+    /* line 102, sass/partials/_footer.scss */
     .footer-row-two .socialmedia a {
       margin: 0 0 0 10px;
       padding: 0;
       float: right;
       height: auto; }
-      /* line 94, sass/partials/_footer.scss */
+      /* line 107, sass/partials/_footer.scss */
       .footer-row-two .socialmedia a:hover img, .footer-row-two .socialmedia a:focus img {
         border: 1px solid white;
         -webkit-border-radius: 2px;
@@ -628,7 +643,7 @@ footer ul {
         -ms-border-radius: 2px;
         -o-border-radius: 2px;
         border-radius: 2px; }
-    /* line 99, sass/partials/_footer.scss */
+    /* line 112, sass/partials/_footer.scss */
     .footer-row-two .socialmedia img {
       -webkit-border-radius: 2px;
       -moz-border-radius: 2px;
@@ -664,11 +679,20 @@ h2 {
   font-family: "Italiana", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 /* line 25, sass/partials/_modules.scss */
+h2 a {
+  font-family: "Italiana", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none; }
+  /* line 28, sass/partials/_modules.scss */
+  h2 a:hover, h2 a:focus {
+    color: #8a151b;
+    text-decoration: underline; }
+
+/* line 33, sass/partials/_modules.scss */
 a:hover h2, a:focus h2 {
   color: #8a151b;
   text-decoration: underline; }
 
-/* line 29, sass/partials/_modules.scss */
+/* line 37, sass/partials/_modules.scss */
 h3 {
   font-size: 1.5em;
   color: #585340;
@@ -676,28 +700,28 @@ h3 {
   margin-bottom: 5px;
   font-family: "Italiana", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 36, sass/partials/_modules.scss */
+/* line 44, sass/partials/_modules.scss */
 h4 {
   font-size: 1em;
   color: #585340;
   margin-top: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 42, sass/partials/_modules.scss */
+/* line 50, sass/partials/_modules.scss */
 h5 {
   font-size: 0.9em;
   color: #585340;
   margin-top: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 48, sass/partials/_modules.scss */
+/* line 56, sass/partials/_modules.scss */
 h6 {
   font-size: 0.8em;
   color: #585340;
   margin-top: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* line 54, sass/partials/_modules.scss */
+/* line 62, sass/partials/_modules.scss */
 p {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
@@ -705,20 +729,20 @@ p {
   color: #4d4d4d;
   font-weight: 300; }
 
-/* line 61, sass/partials/_modules.scss */
+/* line 69, sass/partials/_modules.scss */
 a {
   text-decoration: none;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
   line-height: 1.4em;
   color: #585340;
-  font-weight: 300; }
-  /* line 68, sass/partials/_modules.scss */
+  font-weight: 300;
+  text-decoration: underline; }
+  /* line 77, sass/partials/_modules.scss */
   a:hover, a:focus {
-    text-decoration: underline;
-    color: #585340; }
+    color: #8a151b; }
 
-/* line 73, sass/partials/_modules.scss */
+/* line 81, sass/partials/_modules.scss */
 ul {
   list-style: disc inside;
   margin: 0;
@@ -727,7 +751,7 @@ ul {
   color: #4d4d4d;
   font-weight: 300; }
 
-/* line 81, sass/partials/_modules.scss */
+/* line 89, sass/partials/_modules.scss */
 ol {
   margin: 0;
   padding: 0 0 0 25px;
@@ -735,42 +759,84 @@ ol {
   color: #4d4d4d;
   font-weight: 300; }
 
-/* line 88, sass/partials/_modules.scss */
+/* line 96, sass/partials/_modules.scss */
 ul {
   list-style: disc outside;
   padding-left: 20px; }
 
-/* line 92, sass/partials/_modules.scss */
+/* line 100, sass/partials/_modules.scss */
 th, td {
   border: solid 1px black;
   padding: 5px; }
 
-/* line 96, sass/partials/_modules.scss */
+/* line 104, sass/partials/_modules.scss */
 #breadcrumbs {
   font-size: 0.8em; }
 
-/* line 99, sass/partials/_modules.scss */
+/* line 107, sass/partials/_modules.scss */
 .featuredimg {
   float: left;
   margin: 0 0 20px 0; }
 
+/* line 111, sass/partials/_modules.scss */
+.attachment-post-thumbnail {
+  margin-right: 20px;
+  width: auto;
+  height: auto; }
+
 /*! Sidebars */
-/* line 104, sass/partials/_modules.scss */
+/* line 117, sass/partials/_modules.scss */
 ul.sidebarone, ul.sidebartwo {
   list-style: outside none;
   margin: 0;
   padding: 0; }
 
-/* line 109, sass/partials/_modules.scss */
+/* line 122, sass/partials/_modules.scss */
 .sidebarone .widget_search {
   margin-bottom: 40px; }
 
-/* line 112, sass/partials/_modules.scss */
+/* line 125, sass/partials/_modules.scss */
 .sidebarone .widget-title, .sidebartwo .widget-title {
-  color: #585340; }
+  color: #585340;
+  line-height: 1.4em; }
+
+/* line 129, sass/partials/_modules.scss */
+.sidebarone .widget-container, .sidebartwo .widget-container {
+  margin-bottom: 20px;
+  font-size: 0.9em;
+  color: #4d4d4d;
+  font-weight: 300;
+  line-height: 1.4em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/* line 138, sass/partials/_modules.scss */
+.sidebarone input[type="submit"] {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background: #8a151b;
+  color: white;
+  border: none;
+  padding: 6px 0;
+  float: right;
+  width: 29.16667%;
+  font-weight: 300;
+  font-size: 0.9em; }
+/* line 150, sass/partials/_modules.scss */
+.sidebarone input[type="text"] {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 3px 0;
+  width: 66.66667%; }
 
 /*! Images */
-/* line 116, sass/partials/_modules.scss */
+/* line 157, sass/partials/_modules.scss */
 .aligncenter {
   clear: both;
   display: block;
@@ -778,17 +844,17 @@ ul.sidebarone, ul.sidebartwo {
   margin-right: auto;
   padding: 1.04167%; }
 
-/* line 123, sass/partials/_modules.scss */
+/* line 164, sass/partials/_modules.scss */
 .alignleft {
   float: left;
   margin: 10px 1.04167% 10px 0; }
 
-/* line 127, sass/partials/_modules.scss */
+/* line 168, sass/partials/_modules.scss */
 .alignright {
   float: right;
   margin: 10px 0 1.04167% 10px; }
 
-/* line 131, sass/partials/_modules.scss */
+/* line 172, sass/partials/_modules.scss */
 .wp-caption {
   background: #e6e6e6;
   line-height: 18px;
@@ -797,29 +863,28 @@ ul.sidebarone, ul.sidebartwo {
   padding: 5px;
   text-align: center; }
 
-/* line 138, sass/partials/_modules.scss */
+/* line 179, sass/partials/_modules.scss */
 .wp-caption p.wp-caption-text {
   color: #4d4d4d;
   font-size: 0.8em;
   margin: 0; }
 
 /*! Homepage */
-/* line 144, sass/partials/_modules.scss */
+/* line 185, sass/partials/_modules.scss */
 .homepghighlight {
   background: #b7ae9d;
   padding: 10px 1.04167%;
-  margin-bottom: 2.08333%;
   float: left; }
-  /* line 149, sass/partials/_modules.scss */
+  /* line 189, sass/partials/_modules.scss */
   .homepghighlight p {
     font-size: 1.2em;
     line-height: 1.2em;
     color: black; }
-  /* line 154, sass/partials/_modules.scss */
+  /* line 194, sass/partials/_modules.scss */
   .homepghighlight h2 {
     font-family: "Italiana", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: black; }
-  /* line 158, sass/partials/_modules.scss */
+  /* line 198, sass/partials/_modules.scss */
   .homepghighlight a {
     background: #8a151b;
     color: white;
@@ -832,13 +897,14 @@ ul.sidebarone, ul.sidebartwo {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px;
-    text-align: center; }
-    /* line 167, sass/partials/_modules.scss */
+    text-align: center;
+    text-decoration: none; }
+    /* line 208, sass/partials/_modules.scss */
     .homepghighlight a:hover, .homepghighlight a:focus {
       background: #585340;
       text-decoration: none; }
 
-/* line 173, sass/partials/_modules.scss */
+/* line 214, sass/partials/_modules.scss */
 a.homelink {
   background: #585340;
   color: white;
@@ -851,79 +917,86 @@ a.homelink {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   border-radius: 10px;
-  text-align: center; }
-  /* line 182, sass/partials/_modules.scss */
+  text-align: center;
+  text-decoration: none; }
+  /* line 224, sass/partials/_modules.scss */
   a.homelink:hover, a.homelink:focus {
     background: #b7ae9d;
     color: black;
     text-decoration: none; }
 
 /*! Blog */
-/* line 189, sass/partials/_modules.scss */
+/* line 231, sass/partials/_modules.scss */
 ul.bloglist {
   list-style: outside none;
   margin: 0;
   padding: 0;
   /*! if have image push text over */ }
-  /* line 193, sass/partials/_modules.scss */
+  /* line 235, sass/partials/_modules.scss */
   ul.bloglist .blogimg {
     width: 16.66667%;
     height: auto;
     float: left;
     margin: 0 2.08333% 0 0; }
-    /* line 198, sass/partials/_modules.scss */
+    /* line 240, sass/partials/_modules.scss */
     ul.bloglist .blogimg img {
       width: 100%;
       height: auto;
       border: 1px solid white; }
-  /* line 205, sass/partials/_modules.scss */
+  /* line 246, sass/partials/_modules.scss */
+  ul.bloglist a.bloglink {
+    text-decoration: none; }
+  /* line 250, sass/partials/_modules.scss */
   ul.bloglist .hasimg {
     margin-left: 18.75%; }
-  /* line 209, sass/partials/_modules.scss */
+  /* line 254, sass/partials/_modules.scss */
   ul.bloglist a.bloglink:hover img {
-    border: 1px solid #585340; }
-  /* line 213, sass/partials/_modules.scss */
+    border: 1px solid #8a151b; }
+  /* line 257, sass/partials/_modules.scss */
+  ul.bloglist a.bloglink:hover h2 {
+    text-decoration: underline; }
+  /* line 261, sass/partials/_modules.scss */
   ul.bloglist li {
     padding: 0 0 30px 0;
     margin: 0 0 30px 0;
     border-bottom: 1px dotted black;
     float: left;
     width: 100%; }
-    /* line 219, sass/partials/_modules.scss */
+    /* line 267, sass/partials/_modules.scss */
     ul.bloglist li p {
       margin: 0; }
-    /* line 222, sass/partials/_modules.scss */
+    /* line 270, sass/partials/_modules.scss */
     ul.bloglist li p.date {
       font-size: 0.8em;
       color: gray;
       margin: 10px 0;
       display: block; }
 
-/* line 230, sass/partials/_modules.scss */
+/* line 278, sass/partials/_modules.scss */
 .nav-below {
   margin-top: 20px;
   float: left;
   width: 100%; }
 
-/* line 235, sass/partials/_modules.scss */
+/* line 283, sass/partials/_modules.scss */
 .oldposts {
   width: 50%;
   float: left; }
 
-/* line 239, sass/partials/_modules.scss */
+/* line 287, sass/partials/_modules.scss */
 .newposts {
   width: 50%;
   float: right;
   text-align: right; }
 
-/* line 244, sass/partials/_modules.scss */
+/* line 292, sass/partials/_modules.scss */
 .backlink {
   width: 100%;
   float: left;
   margin-top: 20px; }
 
 /*! Comments */
-/* line 250, sass/partials/_modules.scss */
+/* line 298, sass/partials/_modules.scss */
 .comments {
   width: 100%;
   border: 1px solid black;
@@ -935,17 +1008,17 @@ ul.bloglist {
   background: #b7ae9d;
   padding: 20px 2.08333%;
   float: left; }
-  /* line 257, sass/partials/_modules.scss */
+  /* line 305, sass/partials/_modules.scss */
   .comments p {
     width: 100%;
     margin: 10px 0;
     float: left; }
-    /* line 261, sass/partials/_modules.scss */
+    /* line 309, sass/partials/_modules.scss */
     .comments p label {
       width: 16.66667%;
       margin-right: 8.33333%;
       float: left; }
-    /* line 266, sass/partials/_modules.scss */
+    /* line 314, sass/partials/_modules.scss */
     .comments p input, .comments p textarea {
       width: 75%;
       float: left;
@@ -954,27 +1027,29 @@ ul.bloglist {
       -ms-border-radius: 5px;
       -o-border-radius: 5px;
       border-radius: 5px; }
-  /* line 272, sass/partials/_modules.scss */
+  /* line 320, sass/partials/_modules.scss */
   .comments p.form-allowed-tags {
     font-size: 0.8em; }
-  /* line 275, sass/partials/_modules.scss */
+  /* line 323, sass/partials/_modules.scss */
   .comments p.form-submit {
     margin: 0; }
-    /* line 277, sass/partials/_modules.scss */
+    /* line 325, sass/partials/_modules.scss */
     .comments p.form-submit input[type="submit"] {
       width: 33.33333%;
       float: right;
       padding: 5px 1.04167%;
       border: none;
       background: #585340;
-      color: white; }
-  /* line 286, sass/partials/_modules.scss */
+      color: white;
+      font-weight: 300;
+      font-size: 0.9em; }
+  /* line 336, sass/partials/_modules.scss */
   .comments ol {
     list-style: none outside;
     padding: 0; }
 
 /*! Options - including Custom Post Types and Plugin CSS overwrites */
-/*! Gravity Forms - Contact Form to fit the 2:1 grid layout */
+/*! Gravity Forms - Contact Form to fit the 2:1 grid layout or homepage/sidebar */
 /* line 4, sass/partials/_options.scss */
 #gform_1 {
   background: #e9e7e1;
@@ -992,56 +1067,84 @@ ul.bloglist {
   #gform_1 .gform_title {
     margin-top: 0; }
   /* line 15, sass/partials/_options.scss */
+  #gform_1 .gform_description {
+    font-weight: 300;
+    color: black; }
+  /* line 19, sass/partials/_options.scss */
+  #gform_1 input[type="submit"] {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    background: #8a151b;
+    color: white;
+    border: none;
+    padding: 6px 0;
+    float: right;
+    font-weight: 300;
+    font-size: 0.9em; }
+  /* line 30, sass/partials/_options.scss */
   #gform_1 ul li {
     width: 100%;
     float: left; }
-    /* line 18, sass/partials/_options.scss */
+    /* line 33, sass/partials/_options.scss */
     #gform_1 ul li label {
       width: 33.33333%;
       margin: 10px 4.16667% 10px 0;
       float: left;
       font-weight: 300;
       color: black; }
-    /* line 25, sass/partials/_options.scss */
+    /* line 40, sass/partials/_options.scss */
+    #gform_1 ul li .ginput_left label, #gform_1 ul li .ginput_right label {
+      margin: 5px 4.16667% 10px 0;
+      width: 95%; }
+    /* line 44, sass/partials/_options.scss */
+    #gform_1 ul li .gfield_checkbox label {
+      margin: 0 4.16667% 10px 10px;
+      width: 75%; }
+    /* line 48, sass/partials/_options.scss */
     #gform_1 ul li .ginput_container {
       width: 62.5%;
       margin: 5px 0 0 0;
       float: left; }
-      /* line 29, sass/partials/_options.scss */
+      /* line 52, sass/partials/_options.scss */
       #gform_1 ul li .ginput_container textarea, #gform_1 ul li .ginput_container input {
-        width: 100%; }
-    /* line 33, sass/partials/_options.scss */
+        width: 100%;
+        border: 1px solid black; }
+    /* line 57, sass/partials/_options.scss */
     #gform_1 ul li .ginput_left {
       width: 47.91667%;
       margin: 5px 4.16667% 0 0;
       float: left; }
-      /* line 37, sass/partials/_options.scss */
+      /* line 61, sass/partials/_options.scss */
       #gform_1 ul li .ginput_left input {
         width: 100% !important; }
-    /* line 41, sass/partials/_options.scss */
+    /* line 65, sass/partials/_options.scss */
     #gform_1 ul li .ginput_right {
       width: 47.91667%;
       margin: 5px 0 0 0;
       float: left; }
-      /* line 45, sass/partials/_options.scss */
+      /* line 69, sass/partials/_options.scss */
       #gform_1 ul li .ginput_right input {
         width: 100% !important; }
-  /* line 50, sass/partials/_options.scss */
+  /* line 74, sass/partials/_options.scss */
   #gform_1 .gform_footer {
     padding: 0;
     width: 100%;
     float: left; }
-    /* line 54, sass/partials/_options.scss */
+    /* line 78, sass/partials/_options.scss */
     #gform_1 .gform_footer input[type="submit"] {
       background: #585340;
       color: white;
       border: none;
       float: right;
       padding: 5px 2.08333%; }
-      /* line 60, sass/partials/_options.scss */
+      /* line 84, sass/partials/_options.scss */
       #gform_1 .gform_footer input[type="submit"]:hover, #gform_1 .gform_footer input[type="submit"]:focus {
         background: #8a151b; }
-  /* line 65, sass/partials/_options.scss */
+  /* line 89, sass/partials/_options.scss */
   #gform_1 input, #gform_1 textarea {
     float: left;
     -webkit-border-radius: 5px;
@@ -1051,32 +1154,32 @@ ul.bloglist {
     border-radius: 5px; }
 
 /*! Soliloquy Slider */
-/* line 71, sass/partials/_options.scss */
+/* line 95, sass/partials/_options.scss */
 .soliloquy-container {
   margin: 0 0 20px 0 !important; }
-  /* line 73, sass/partials/_options.scss */
+  /* line 97, sass/partials/_options.scss */
   .soliloquy-container img {
     width: 100%;
     height: auto; }
-  /* line 77, sass/partials/_options.scss */
+  /* line 101, sass/partials/_options.scss */
   .soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
     background: rgba(88, 83, 64, 0.5) !important; }
 
 /*! Staff Plugin single (rest relies on the blog styling) */
-/* line 82, sass/partials/_options.scss */
+/* line 106, sass/partials/_options.scss */
 .blogimgsingle {
   float: left;
-  max-width: 33.33333%;
+  width: 33.33333%;
   height: auto;
   float: left;
   margin: 0 3.125% 10px 0; }
-  /* line 88, sass/partials/_options.scss */
+  /* line 112, sass/partials/_options.scss */
   .blogimgsingle img {
     width: 100%;
     height: auto;
     border: 1px solid gray;
     padding: 5px; }
-  /* line 94, sass/partials/_options.scss */
+  /* line 118, sass/partials/_options.scss */
   .blogimgsingle .caption {
     font-size: 0.8em;
     color: gray;
@@ -1085,7 +1188,7 @@ ul.bloglist {
     font-weight: 300; }
 
 /*! Staff list/single */
-/* line 103, sass/partials/_options.scss */
+/* line 127, sass/partials/_options.scss */
 ul.bloglist p.jobdetails, p.jobdetails {
   font-size: 0.9em;
   margin-bottom: 20px;
@@ -1093,14 +1196,14 @@ ul.bloglist p.jobdetails, p.jobdetails {
   color: gray; }
 
 /*! Testimonials Plugin */
-/* line 110, sass/partials/_options.scss */
+/* line 134, sass/partials/_options.scss */
 p.testimonialdetails {
   text-align: right;
   font-size: 0.8em;
   color: gray; }
 
 /*! sidebar one navigation */
-/* line 116, sass/partials/_options.scss */
+/* line 140, sass/partials/_options.scss */
 p.subnavtitle {
   font-size: 1.2em;
   font-family: "Italiana", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1110,148 +1213,196 @@ p.subnavtitle {
   padding: 3px 10px;
   margin-bottom: 0; }
 
-/* line 125, sass/partials/_options.scss */
+/* line 149, sass/partials/_options.scss */
 ul.subnavlinks {
   list-style: outside none;
   margin: 0 0 30px 0;
   padding: 0; }
-  /* line 129, sass/partials/_options.scss */
+  /* line 153, sass/partials/_options.scss */
   ul.subnavlinks li {
     padding: 0;
     margin: 0;
     width: 100%;
     display: block; }
-    /* line 134, sass/partials/_options.scss */
+    /* line 158, sass/partials/_options.scss */
     ul.subnavlinks li a {
       padding: 3px 10px;
       background: white;
       width: 100%;
       display: block;
-      border-bottom: 1px solid gray; }
-      /* line 140, sass/partials/_options.scss */
+      border-bottom: 1px solid gray;
+      text-decoration: none; }
+      /* line 165, sass/partials/_options.scss */
       ul.subnavlinks li a:hover, ul.subnavlinks li a:focus {
         background: #585340;
         color: white;
         text-decoration: none; }
 
 /*! blog posts on the homepage */
-/* line 149, sass/partials/_options.scss */
+/* line 174, sass/partials/_options.scss */
 h2.homeblogposts {
   font-size: 1.1em; }
 
-/* line 152, sass/partials/_options.scss */
+/* line 177, sass/partials/_options.scss */
 .homeblogdate {
   font-size: 0.7em;
   margin-bottom: 5px;
   color: gray; }
 
-/* line 157, sass/partials/_options.scss */
+/* line 182, sass/partials/_options.scss */
 .bloglist li.homeblogitem {
   margin: 0 0 10px 0;
   padding: 0 0 10px 0; }
 
 /* Events CPT Plugin */
-/* line 162, sass/partials/_options.scss */
+/* line 187, sass/partials/_options.scss */
 .eventdate {
   margin-bottom: 5px; }
 
 /*! Media Queries */
+/*!-- Tablet portrait */
+@media screen and (max-width: 870px) {
+  /* line 4, sass/partials/_mediaqueries.scss */
+  ul.bloglist .blogimg {
+    margin-bottom: 30px; } }
+@media screen and (max-width: 825px) {
+  /* line 9, sass/partials/_mediaqueries.scss */
+  .rowtwo a {
+    padding: 8px 8px;
+    font-size: 0.9em; }
+
+  /* line 13, sass/partials/_mediaqueries.scss */
+  .rowtwo .inner ul ul {
+    top: 2.3em; } }
 /*!-- Tablet portrait / Small landscape */
 @media screen and (max-width: 700px) {
-  /* line 5, sass/partials/_mediaqueries.scss */
+  /* line 19, sass/partials/_mediaqueries.scss */
   .footer-row-one input[type="submit"] {
     width: auto;
     display: block;
     margin: 5px 0;
     padding: 5px 10px; }
 
-  /* line 11, sass/partials/_mediaqueries.scss */
+  /* line 25, sass/partials/_mediaqueries.scss */
   .footer-row-one input[type="text"] {
-    width: 100%; } }
+    width: 100%; }
+
+  /* line 28, sass/partials/_mediaqueries.scss */
+  .rowtwo a {
+    padding: 8px 5px;
+    font-size: 0.9em; }
+
+  /* sidebars */
+  /* line 33, sass/partials/_mediaqueries.scss */
+  .sidebarone input[type="text"] {
+    width: 100%; }
+
+  /* line 36, sass/partials/_mediaqueries.scss */
+  .sidebarone input[type="submit"] {
+    width: 50%;
+    margin-top: 5px; }
+
+  /* if gravity form in sidebar change the form number if required */
+  /* line 41, sass/partials/_mediaqueries.scss */
+  #gform_1 ul li .ginput_container {
+    width: 100%;
+    margin: 0; }
+
+  /* line 45, sass/partials/_mediaqueries.scss */
+  #gform_1 ul li label {
+    width: 100%; }
+
+  /* line 48, sass/partials/_mediaqueries.scss */
+  #gform_1 .gform_footer input[type="submit"] {
+    width: 50%; }
+
+  /* line 51, sass/partials/_mediaqueries.scss */
+  .gform_wrapper .gform_footer {
+    margin: 0; } }
 /*!-- Small tablet portrait */
 @media screen and (max-width: 620px) {
-  /* line 17, sass/partials/_mediaqueries.scss */
+  /* line 57, sass/partials/_mediaqueries.scss */
   .comments p.form-submit input[type="submit"] {
     width: auto; }
 
-  /* line 20, sass/partials/_mediaqueries.scss */
+  /* line 60, sass/partials/_mediaqueries.scss */
   a.homelink {
     font-size: 0.9em;
     padding: 5px; }
 
-  /* line 24, sass/partials/_mediaqueries.scss */
+  /* line 64, sass/partials/_mediaqueries.scss */
   .rowtwo a {
-    padding: 8px 8px;
-    font-size: 0.9em; } }
+    font-size: 0.8em;
+    padding: 5px 2px; } }
 /*!-- Mobile landscape */
 @media screen and (max-width: 500px) {
-  /* line 31, sass/partials/_mediaqueries.scss */
+  /* line 71, sass/partials/_mediaqueries.scss */
   .colonethird {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 37, sass/partials/_mediaqueries.scss */
+  /* line 77, sass/partials/_mediaqueries.scss */
   .coltwothirds {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 43, sass/partials/_mediaqueries.scss */
+  /* line 83, sass/partials/_mediaqueries.scss */
   .colonehalfthreecol {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 49, sass/partials/_mediaqueries.scss */
+  /* line 89, sass/partials/_mediaqueries.scss */
   .colonehalf {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 55, sass/partials/_mediaqueries.scss */
+  /* line 95, sass/partials/_mediaqueries.scss */
   .threecols {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 61, sass/partials/_mediaqueries.scss */
+  /* line 101, sass/partials/_mediaqueries.scss */
   .colonefourth {
     width: 100%;
     float: left;
     padding: 0 0 20px 0;
     margin: 0; }
 
-  /* line 67, sass/partials/_mediaqueries.scss */
+  /* line 107, sass/partials/_mediaqueries.scss */
   .rightcol {
     padding-left: 0; }
 
-  /* line 70, sass/partials/_mediaqueries.scss */
+  /* line 110, sass/partials/_mediaqueries.scss */
   .leftcol {
     padding-right: 0; }
 
-  /* line 73, sass/partials/_mediaqueries.scss */
+  /* line 113, sass/partials/_mediaqueries.scss */
   .contentpage .rightcol {
     margin-top: 40px; }
 
-  /* line 76, sass/partials/_mediaqueries.scss */
+  /* line 116, sass/partials/_mediaqueries.scss */
   header .colonethird {
     padding: 0 0 20px 0; }
-    /* line 78, sass/partials/_mediaqueries.scss */
+    /* line 118, sass/partials/_mediaqueries.scss */
     header .colonethird a {
       width: 66.66667%;
       margin: 0 auto; }
 
-  /* line 83, sass/partials/_mediaqueries.scss */
+  /* line 123, sass/partials/_mediaqueries.scss */
   header .coltwothirds {
     text-align: center; }
 
-  /* line 86, sass/partials/_mediaqueries.scss */
+  /* line 126, sass/partials/_mediaqueries.scss */
   .rowtwo .inner a.mmenu {
     display: block;
     width: 100%;
@@ -1261,27 +1412,27 @@ h2.homeblogposts {
     background: url(images/mobile-menu.png) no-repeat 5px center;
     padding-left: 50px;
     font-size: 1.1em; }
-    /* line 95, sass/partials/_mediaqueries.scss */
+    /* line 135, sass/partials/_mediaqueries.scss */
     .rowtwo .inner a.mmenu:hover, .rowtwo .inner a.mmenu:focus {
       background: url(images/mobile-menu.png) no-repeat 5px center #585340;
       color: white;
       text-decoration: none; }
 
-  /* line 102, sass/partials/_mediaqueries.scss */
+  /* line 142, sass/partials/_mediaqueries.scss */
   header .rowtwo .inner .mobilemenu ul li {
     width: 100%;
     text-decoration: none;
     border-bottom: 1px dotted white; }
-    /* line 106, sass/partials/_mediaqueries.scss */
+    /* line 146, sass/partials/_mediaqueries.scss */
     header .rowtwo .inner .mobilemenu ul li a {
       font-size: 1em; }
-      /* line 108, sass/partials/_mediaqueries.scss */
+      /* line 148, sass/partials/_mediaqueries.scss */
       header .rowtwo .inner .mobilemenu ul li a:hover, header .rowtwo .inner .mobilemenu ul li a:focus {
         background: #585340;
         color: white;
         text-decoration: none; }
 
-  /* line 116, sass/partials/_mediaqueries.scss */
+  /* line 156, sass/partials/_mediaqueries.scss */
   header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu {
     position: relative;
     left: 0;
@@ -1289,7 +1440,7 @@ h2.homeblogposts {
     top: 0;
     display: block;
     border-bottom: none; }
-    /* line 123, sass/partials/_mediaqueries.scss */
+    /* line 163, sass/partials/_mediaqueries.scss */
     header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu a {
       background: #8a151b;
       line-height: 1.3em;
@@ -1298,31 +1449,31 @@ h2.homeblogposts {
       height: auto;
       text-decoration: none;
       border-bottom: none; }
-    /* line 132, sass/partials/_mediaqueries.scss */
+    /* line 172, sass/partials/_mediaqueries.scss */
     header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu li a:hover, header .rowtwo .inner .mobilemenu li:hover > ul.sub-menu li a:focus {
       background-color: #585340;
       width: 100%; }
 
-  /* line 137, sass/partials/_mediaqueries.scss */
+  /* line 177, sass/partials/_mediaqueries.scss */
   .mainmenu {
     display: none; }
 
-  /* line 140, sass/partials/_mediaqueries.scss */
+  /* line 180, sass/partials/_mediaqueries.scss */
   .footer-row-two ul {
     float: left; }
 
-  /* line 143, sass/partials/_mediaqueries.scss */
+  /* line 183, sass/partials/_mediaqueries.scss */
   footer .footer-row-two {
     text-align: center; }
-    /* line 145, sass/partials/_mediaqueries.scss */
+    /* line 185, sass/partials/_mediaqueries.scss */
     footer .footer-row-two .coltwothirds .socialmedia {
       float: none;
       width: 50%;
       margin: 0 auto; }
-    /* line 150, sass/partials/_mediaqueries.scss */
+    /* line 190, sass/partials/_mediaqueries.scss */
     footer .footer-row-two .socialmedia a:last-child {
       margin: 0; }
-    /* line 153, sass/partials/_mediaqueries.scss */
+    /* line 193, sass/partials/_mediaqueries.scss */
     footer .footer-row-two ul {
       clear: both;
       float: none;
@@ -1330,60 +1481,60 @@ h2.homeblogposts {
       margin: 0 auto; }
 
   /* homepage */
-  /* line 161, sass/partials/_mediaqueries.scss */
+  /* line 201, sass/partials/_mediaqueries.scss */
   .homepghighlight {
     padding: 10px; }
 
   /* if comments are added */
-  /* line 165, sass/partials/_mediaqueries.scss */
+  /* line 205, sass/partials/_mediaqueries.scss */
   .comments p label {
     width: 100%;
     margin: 0 0 10px 0; }
 
-  /* line 169, sass/partials/_mediaqueries.scss */
+  /* line 209, sass/partials/_mediaqueries.scss */
   .comments p input, .comments p textarea {
     width: 100%;
     margin: 0 0 10px 0; }
 
   /* if contact form with gravity forms is added */
-  /* line 174, sass/partials/_mediaqueries.scss */
+  /* line 214, sass/partials/_mediaqueries.scss */
   #gform_1 ul li .ginput_container, #gform_1 ul li label {
     width: 100%; }
 
   /* if solioquy is added - allows for 3 images otherwise caption padding needs adjusting and/or alignment of text */
-  /* line 178, sass/partials/_mediaqueries.scss */
+  /* line 218, sass/partials/_mediaqueries.scss */
   .soliloquy-container .soliloquy-caption .soliloquy-caption-inside {
     padding: 10px 20% !important;
     margin: 0 auto !important; } }
 /*!-- Mobile portrait */
 @media screen and (max-width: 400px) {
-  /* line 185, sass/partials/_mediaqueries.scss */
+  /* line 225, sass/partials/_mediaqueries.scss */
   footer .footer-row-two .coltwothirds .socialmedia {
     float: none;
     width: 65%;
     margin: 0 auto; }
 
-  /* line 190, sass/partials/_mediaqueries.scss */
+  /* line 230, sass/partials/_mediaqueries.scss */
   .footer-row-two .socialmedia a:last-child {
     margin: 0; }
 
   /* if using the staff plugin */
-  /* line 194, sass/partials/_mediaqueries.scss */
+  /* line 234, sass/partials/_mediaqueries.scss */
   .blogimgsingle {
     clear: both;
     max-width: 100%; } }
 /*!-- Print Styles */
 @media print {
-  /* line 202, sass/partials/_mediaqueries.scss */
+  /* line 242, sass/partials/_mediaqueries.scss */
   img, .mainmenu, .mobilemenu {
     display: none; }
 
-  /* line 205, sass/partials/_mediaqueries.scss */
+  /* line 245, sass/partials/_mediaqueries.scss */
   h1, h2, h3, h4, h5, h6 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold; }
 
-  /* line 209, sass/partials/_mediaqueries.scss */
+  /* line 249, sass/partials/_mediaqueries.scss */
   header, footer, .footer-row-one, .footer-row-two, .homepghighlight {
     background: white;
     color: black; } }

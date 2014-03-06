@@ -28,32 +28,28 @@ get_header(); ?>
 					<?php if ( has_post_thumbnail() ) {
 						echo '<span class="blogimg">';
 						the_post_thumbnail();
-						echo '</span><div class="hasimg">';
+						echo '</span>';
 					} ?>
 					<h2><?php echo the_title(); ?></h2></a>
 					<!-- check for custom meta, then display if exisits -->
 					<?php if ( function_exists( 'get_field' ) ) {
+						echo '<div class="eventdate">';
 						if ( get_field( 'start_date_of_event' ) ) {
 							$startdate = DateTime::createFromFormat( 'Ymd', get_field( 'start_date_of_event' ));
-							echo '<div class="eventdate">' . $startdate->format('d/m/Y');
+							echo $startdate->format('d/m/Y');
 						}
 						if ( get_field( 'end_date_of_event' ) ) {
 							$enddate = DateTime::createFromFormat( 'Ymd', get_field( 'end_date_of_event' ));
 							echo ' - ' . $enddate->format('d/m/Y');
 						}
-						echo '</div><!-- / .eventdate -->';
+						echo '</div>';
 						if ( get_field( 'short_description' ) ) {
 							echo '<p>' . get_field( 'short_description' ) . '</p><br />';
 						}
 					} ?>	
 					<a href="<?php the_permalink() ?>" class="bloglink">Read more about <?php echo the_title(); ?> &raquo;</a> 				
-					<?php //if has image close the div that pushes text in line
-					if ( has_post_thumbnail() ) {
-						echo '</div><!-- / .hasimg -->';
-					} ?>
 				</li>
 				<?php endwhile; ?>
-
 			</ul>
 			<?php wp_reset_postdata(); endif; ?>
 		<?php } ?>

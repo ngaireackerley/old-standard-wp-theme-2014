@@ -29,7 +29,7 @@ get_header(); ?>
 						the_post_thumbnail();
 						echo '</span><div class="hasimg">';
 					} 
-					the_excerpt(); 
+					the_content(); 
 					echo '<p class="testimonialdetails">';
 					// check for custom meta, then display if exisits
 					$testimonialname = get_post_meta( $post->ID, "_testimonial_name", true );
